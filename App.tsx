@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppLoading } from 'expo';
+
+import { Graduate_400Regular, useFonts } from '@expo-google-fonts/graduate'
+
+import CreateCharStack from './src/routes/createCharStack';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  let [fontsLoaded] = useFonts({
+    Graduate_400Regular
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if(!fontsLoaded) {
+    return <AppLoading />
+  } else {
+    return (
+      <>
+        <CreateCharStack />
+      </>
+    );
+  }
+}
