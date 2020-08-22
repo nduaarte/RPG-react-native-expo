@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 50
   },
 
   title: {
