@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppLoading } from 'expo';
+import { StatusBar } from 'expo-status-bar'
 
 import { Graduate_400Regular, useFonts } from '@expo-google-fonts/graduate'
 
@@ -15,6 +16,7 @@ export default function App() {
   } else {
     return (
       <>
+        <StatusBar style='auto' />
         <CreateCharStack />
       </>
     );

@@ -11,9 +11,9 @@ export default function createCharStack() {
   return(
     <NavigationContainer>
       <Navigator screenOptions={{headerShown: false}}>
-        <Screen name='CreateCharStep2' component={CreateCharStep2} /> 
-        <Screen name='CreateCharStep1' component={CreateCharStep1} />
         <Screen name='Landing' component={Landing} />
+        <Screen name='CreateCharStep1' component={CreateCharStep1} />
+        <Screen name='CreateCharStep2' component={CreateCharStep2} />   
       </Navigator>
     </NavigationContainer>
   )

@@ -1,12 +1,18 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 
-import Attributes from './components/attributes';
+import TitleInfo from './components/titleInfo';
+import AttributeList from './components/attributsList';
+import BarCreateChar from '../../components/barCreateChar';
 
-export default function CreateCharStep2() {
+export default function CreateChatStep2() {
   return(
     <View style={{flex: 1}}>
-      <Attributes />
+      <ScrollView>
+        <TitleInfo />
+        <AttributeList />
+      </ScrollView>
+      <BarCreateChar secondStep='#3E8BFF' />
     </View>
   );
 }
