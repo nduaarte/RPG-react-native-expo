@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Provider } from 'react-redux';
-import { Store } from '../../../../redux/store';
+import { useSelector } from 'react-redux';
 
 import Attributes from '../../../../components/attributes';
 
 import styles from './styles';
 
 export default function AttributeList() {
+  const attributes = useSelector(state => state.)
+
   return(
     <View style={styles.container}>
       <Attributes name='Força' color='#980D0D' />
