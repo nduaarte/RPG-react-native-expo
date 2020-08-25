@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
 
@@ -6,6 +6,19 @@ import styles from './styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Attributes(props) {
+  const [pointsLeft, setPointsLeft] = useState(50);
+  const [points, setPoints] = useState(0);
+
+  function Increment() {
+    setPointsLeft(pointsLeft - 1);
+    setPoints(points + 1)
+  }
+
+  function Decrement() {
+    setPointsLeft(pointsLeft + 1);
+    setPoints(points - 1)
+  }
+
   return(
     <View style={styles.container}>
       <View>
@@ -15,15 +28,15 @@ export default function Attributes(props) {
             <Text style={styles.textAttribute}>{props.name}</Text>
           </View>         
           <View style={styles.row}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={Decrement}>
               <Entypo color='#DD4B4B' name='circle-with-minus' size={30} />
             </TouchableOpacity>
 
             <View style={styles.valueContainer}>
-              <Text style={styles.value}>{0}</Text>
+              <Text style={styles.value}>{points}</Text>
             </View>
             
-            <TouchableOpacity>
+            <TouchableOpacity onPress={Increment}>
               <Entypo color='#77AE80' name='circle-with-plus' size={30} />
             </TouchableOpacity>
           </View>
