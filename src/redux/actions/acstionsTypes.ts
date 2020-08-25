@@ -1,0 +1,3 @@
+export const UPDATE_POWER = 'UPDATE_POWER';
+
+export const UPDATE_DEXTERITY = 'UPDATE_DEXTERITY';
