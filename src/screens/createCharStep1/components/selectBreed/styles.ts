@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 40,
     borderWidth: 2,
-    borderColor: '#403E3E'
+    borderColor: '#403E3E',
+    backgroundColor: '#403E3E'
   },
 
   breedName: {
