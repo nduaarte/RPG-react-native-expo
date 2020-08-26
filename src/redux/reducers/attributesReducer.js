@@ -1,8 +1,8 @@
 const INITIAL_STATE = {
   power: 0,
+  intelligence: 0,
   dexterity: 0,
   constitution: 0,
-  intelligence: 0,
   charisma: 0
 };
 
