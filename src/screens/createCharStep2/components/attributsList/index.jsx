@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import *  from '../../../../redux/actions';
 import Attributes from '../../../../components/attributes';
 
 import styles from './styles';
 
 export default function AttributeList() {
-  const attributes = useSelector(state => state.attributesReducer.power);
-  const dispatch = useDispatch();
+  const power = useSelector(state => state.attributesReducer.power);
+  const dexterity = useSelector(state => state.attributesReducer.dexterity);
+  const constitution = useSelector(state => state.attributesReducer.constitution);
+  const intelligence = useSelector(state => state.attributesReducer.intelligence);
+  const charisma = useSelector(state => state.attributesReducer.charisma);
+  const [pointsLeft, setPointsLeft] = useState(50);
 
+  var pointsUsed = power + dexterity + constitution + intelligence + charisma;
   
-
+  useEffect(() => {
+    setPointsLeft(pointsLeft => pointsLeft -= pointsUsed);
+  }, [power, dexterity, constitution, intelligence, charisma]);
+    
   return(
     <View style={styles.container}>
       <Attributes name='Força' color='#980D0D' />
@@ -21,13 +28,9 @@ export default function AttributeList() {
       <Attributes name='Constituição' color='#B1A215' />
       <Attributes name='Carisma' color='#841F8D' />
 
-      <Text>{attributes}</Text>
-      <TouchableOpacity onPress={updateValue}>
-        <Text>click</Text>
-      </TouchableOpacity>
       <View style={styles.pointsLeftContainer}>
         <Text style={styles.pointsText}>Pontos Totais:</Text>
-        <Text style={styles.pointsLeft}>50</Text> 
+        <Text style={styles.pointsLeft}>{pointsLeft}</Text> 
       </View>   
     </View>
   );
