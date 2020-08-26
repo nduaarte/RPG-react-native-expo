@@ -1,40 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
-import { useSelector, useDispatch } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
 
 import styles from './styles';
 
 export default function AttributeList() {
   const dispatch = useDispatch();
 
+  const [pointsLeft, setPointsLeft] = useState(50);
   const [power, setPower] = useState(0);
   const [intelligence, setTntelligence] = useState(0);
   const [dexterity, setDexterity] = useState(0);
   const [constitution, setConstitution] = useState(0);
   const [charisma, setCharisma] = useState(0);
+  var usedPoints = power + intelligence + dexterity + constitution + charisma;
+
+  useEffect(() => {
+    setPointsLeft(50);
+    setPointsLeft(pointsLeft => pointsLeft -= usedPoints);
+  }, [power, intelligence, dexterity, constitution, charisma]);
 
   function incrementValue(attribute) {
     switch(attribute) {
       case 'power':
-        if(power < 14)
+        if(power < 14 && pointsLeft > 0)
           setPower(power + 1);
         break;
       case 'intelligence':
-        if(intelligence < 14)
+        if(intelligence < 14 && pointsLeft > 0)
           setTntelligence(intelligence + 1);
         break;
       case 'dexterity':
-        if(dexterity < 14)
+        if(dexterity < 14 && pointsLeft > 0)
           setDexterity(dexterity + 1);
         break;
       case 'constitution':
-        if(constitution < 14)
+        if(constitution < 14 && pointsLeft > 0)
           setConstitution(constitution + 1);
           break;
       case 'charisma':
-        if(charisma < 14)
+        if(charisma < 14 && pointsLeft > 0)
           setCharisma(charisma + 1);
         break;        
     } 
@@ -179,7 +185,7 @@ export default function AttributeList() {
 
       <View style={styles.pointsLeftContainer}>
         <Text style={styles.pointsText}>Pontos Totais:</Text>
-        <Text style={styles.pointsLeft}>{50}</Text> 
+        <Text style={styles.pointsLeft}>{pointsLeft}</Text> 
       </View>   
     </View>
   );

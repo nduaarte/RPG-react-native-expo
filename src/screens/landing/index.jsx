@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 
@@ -16,6 +17,7 @@ export default function Landing() {
         <Text style={styles.text}>Criar</Text>
         <Text style={styles.text}>Personagem</Text>
       </TouchableOpacity>
+      <StatusBar style='light' />
     </View>
   );
 }
