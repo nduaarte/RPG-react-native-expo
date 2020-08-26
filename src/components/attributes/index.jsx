@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
+import { useDispatch } from 'react-redux'
+
 
 import styles from './styles';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Attributes(props) {
   const [points, setPoints] = useState(0);
+  const dispatch = useDispatch();
+
+  function updateValue() {
+    dispatch({ type: props.actionAttribute, power: points });
+  }
 
   function Increment() {
     if(points < 14) {
@@ -29,7 +35,7 @@ export default function Attributes(props) {
             <Text style={styles.textAttribute}>{props.name}</Text>
           </View>         
           <View style={styles.row}>
-            <TouchableOpacity onPress={Decrement}>
+            <TouchableOpacity onPress={() => {Decrement(), updateValue()}}>
               <Entypo color='#DD4B4B' name='circle-with-minus' size={30} />
             </TouchableOpacity>
 
@@ -37,7 +43,7 @@ export default function Attributes(props) {
               <Text style={styles.value}>{points}</Text>
             </View>
             
-            <TouchableOpacity onPress={Increment}>
+            <TouchableOpacity onPress={() => {Increment(), updateValue()}}>
               <Entypo color='#77AE80' name='circle-with-plus' size={30} />
             </TouchableOpacity>
           </View>
