@@ -19,6 +19,12 @@ export default function AttributeList() {
   useEffect(() => {
     setPointsLeft(50);
     setPointsLeft(pointsLeft => pointsLeft -= usedPoints);
+
+    dispatch({ type: 'UPDATE_POWER', power});
+    dispatch({ type: 'UPDATE_DEXTERITY', dexterity});
+    dispatch({ type: 'UPDATE_CONSTITUTION', constitution});
+    dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence});
+    dispatch({ type: 'UPDATE_CHARISMA', charisma});
   }, [power, intelligence, dexterity, constitution, charisma]);
 
   function incrementValue(attribute) {
@@ -38,7 +44,7 @@ export default function AttributeList() {
       case 'constitution':
         if(constitution < 14 && pointsLeft > 0)
           setConstitution(constitution + 1);
-          break;
+        break;
       case 'charisma':
         if(charisma < 14 && pointsLeft > 0)
           setCharisma(charisma + 1);
@@ -63,7 +69,7 @@ export default function AttributeList() {
       case 'constitution':
         if(constitution > 0)
           setConstitution(constitution - 1);
-          break;
+        break;
       case 'charisma':
         if(charisma > 0)
           setCharisma(charisma - 1);
@@ -184,7 +190,7 @@ export default function AttributeList() {
 
 
       <View style={styles.pointsLeftContainer}>
-        <Text style={styles.pointsText}>Pontos Totais:</Text>
+        <Text style={styles.pointsText}>Pontos Restantes:</Text>
         <Text style={styles.pointsLeft}>{pointsLeft}</Text> 
       </View>   
     </View>

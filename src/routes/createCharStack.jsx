@@ -16,5 +16,5 @@ export default function createCharStack() {
         <Screen name='CreateCharStep2' component={CreateCharStep2} />   
       </Navigator>
     </NavigationContainer>
-  )
+  );
 } 
