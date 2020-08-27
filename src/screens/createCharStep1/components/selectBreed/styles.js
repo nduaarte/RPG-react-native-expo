@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     borderWidth: 2,
     borderColor: '#403E3E',
-    backgroundColor: '#403E3E'
+    backgroundColor: '#D1D1D1'
   },
 
   breedName: {
@@ -42,6 +42,10 @@ const styles = StyleSheet.create({
     marginTop: 3,
     color: '#403E3E'
   },
-})
+
+  elf: {
+    color: 'red'
+  }
+});
 
 export default styles;

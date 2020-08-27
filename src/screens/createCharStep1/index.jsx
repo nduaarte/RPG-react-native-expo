@@ -5,6 +5,7 @@ import { View, ScrollView } from 'react-native';
 import Input from './components/input';
 import SelectBreed from './components/selectBreed';
 import SelectClass from './components/selectClass';
+import TitleInfo from './components/titleInfo';
 import BarCreateChar from '../../components/barCreateChar';
 
 export default function CreateCharStep1() {
@@ -15,6 +16,7 @@ export default function CreateCharStep1() {
         <Input />
         <SelectBreed />
         <SelectClass />
+        <TitleInfo />
       </ScrollView>
       <BarCreateChar firstStep='#3E8BFF' navigate='CreateCharStep2'/>
     </View>

@@ -24,11 +24,10 @@ export function characterName(value) {
   return { type: 'CHARACTER_NAME', value };
 };
 
-export function characterClass(value) {
-  return { type: 'CHARACTER_CLASS', value };
-};
-
 export function characterBreed(value) {
   return { type: 'CHARACTER_BREED', value };
 };
 
+export function characterClass(value) {
+  return { type: 'CHARACTER_CLASS', value };
+};

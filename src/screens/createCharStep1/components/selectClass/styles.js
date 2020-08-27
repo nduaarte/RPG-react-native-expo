@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
     alignItems: 'center',
-    marginBottom: 50
+    marginBottom: 15
   },
 
   title: {
