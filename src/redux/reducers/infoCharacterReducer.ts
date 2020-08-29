@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   class: '',
 };
 
- function infoCharacterReducer(state = INITIAL_STATE, action) {
+ function infoCharacterReducer(state = INITIAL_STATE, action: { type: any; name: any; breed: any; class: any; }) {
   switch(action.type) {
     case 'CHARACTER_NAME':
       return { ...state, name: action.name };

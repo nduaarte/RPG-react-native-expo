@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux';
 
 import styles from './styles';
 
-export default function TitleInfo() {
+export default function classBreedChar() {
   const charClass = useSelector(state => state.infoCharacterReducer.class);
   const charBreed = useSelector(state => state.infoCharacterReducer.breed);
-
 
   return(
     <View style={styles.container}>

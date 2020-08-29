@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 };
 
 
-function attributesReducer(state = INITIAL_STATE, action) {
+function attributesReducer(state = INITIAL_STATE, action: { type: any; power: any; dexterity: any; constitution: any; intelligence: any; charisma: any; }) {
   switch(action.type) {
     case 'UPDATE_POWER':
       return { ...state, power: action.power };
