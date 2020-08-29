@@ -1,12 +1,11 @@
 import React from 'react';
 import { AppLoading } from 'expo';
 import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
 
 import { Graduate_400Regular, useFonts } from '@expo-google-fonts/graduate'
-
-import { store } from './src/redux/store';
 import CreateCharStack from './src/routes/createCharStack';
-import InventoryTab from './src/routes/inventoryTab';
+import EquipCharTab from './src/routes/equiptCharTab';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -18,7 +17,7 @@ export default function App() {
   } else {
     return (
       <Provider store={store}>
-        <InventoryTab />
+        <EquipCharTab />
       </Provider>
     );
   }

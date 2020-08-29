@@ -10,8 +10,8 @@ export default function classBreedChar() {
 
   return(
     <View style={styles.container}>
-      <Text style={styles.class}>{charClass}</Text>
-      <Text style={styles.breed}>{charBreed}</Text>
+      <Text style={styles.class}>Mago</Text>
+      <Text style={styles.breed}>Humano</Text>
     </View>
   );
 }
