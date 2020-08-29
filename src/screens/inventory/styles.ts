@@ -2,14 +2,13 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    margin: 15,
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   title: {
     fontFamily: 'Graduate_400Regular',
     fontSize: 35,
-    margin: 20
+    margin: 35
   },
 
   equipContainer: {
@@ -18,7 +17,8 @@ const styles = StyleSheet.create({
 
   text: {
     fontFamily: 'Graduate_400Regular',
-    fontSize: 20
+    fontSize: 20,
+    marginBottom: 4
   },
 
   boxSlot: {
@@ -45,7 +45,28 @@ const styles = StyleSheet.create({
   },
 
   ajustLowSlot: {
-    marginTop: 27
+    marginTop: 24
+  },
+
+  potionsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  inventoryContainer: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+
+  inventorySlot: {
+    width: 100,
+    height: 100,
+    backgroundColor: '#e6e6e6',
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#9ea3a1',
+    margin: 3
   }
 });
 

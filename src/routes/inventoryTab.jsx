@@ -1,12 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 
 import Inventory from '../screens/inventory';
 
 export default function InventoryTab() {
   return(
-    <View>
+    <ScrollView>
       <Inventory />
-    </View>
+    </ScrollView>
   );
 }

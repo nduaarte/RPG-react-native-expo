@@ -30,8 +30,24 @@ export default function Inventory() {
         </View>
       </View>
 
-      <View>
+      <Text style={[styles.text, styles.ajustLowSlot]}>Poções</Text>
+      <View style={styles.potionsContainer}>
+        <View style={styles.inventorySlot} />
+        <View style={styles.inventorySlot} />
+        <View style={styles.inventorySlot} />
+      </View>
 
+      <Text style={[styles.text, styles.ajustLowSlot]}>Inventário</Text>
+      <View style={styles.inventoryContainer}>
+        <View  style={styles.inventorySlot} />
+        <View  style={styles.inventorySlot} />
+        <View  style={styles.inventorySlot} />
+        <View  style={styles.inventorySlot} />
+        <View  style={styles.inventorySlot} />
+        <View  style={styles.inventorySlot} />
+        <View  style={styles.inventorySlot} />
+        <View  style={styles.inventorySlot} />
+        <View  style={styles.inventorySlot} />
       </View>
     </View>
   );
