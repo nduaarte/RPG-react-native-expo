@@ -3,18 +3,24 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 40,
-    marginVertical: 15
+    marginVertical: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
 
-  attribute: {
+  row: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 8
+    alignItems: 'center'
+  },
+
+  image: {
+    width: 72,
+    height: 51
   },
 
   text: {
     fontFamily: 'Graduate_400Regular',
-    fontSize: 20
+    fontSize: 35
   }
 });
 
