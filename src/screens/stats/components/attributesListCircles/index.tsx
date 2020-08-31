@@ -4,7 +4,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 import styles from './styles';
 
-export default function () {
+export default function AttributesListCircles() {
   return(
     <View style={styles.container}>
       <View style={styles.row}>

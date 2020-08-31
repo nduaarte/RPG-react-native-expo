@@ -4,7 +4,7 @@ import * as Progress from 'react-native-progress';
 
 import styles from './styles';
 
-export default function AttributesChar(props) {
+export default function AttributesCharBars(props) {
   const barValue = ((props.currentValue * 100) / props.totalValue) / 100;
 
   return(

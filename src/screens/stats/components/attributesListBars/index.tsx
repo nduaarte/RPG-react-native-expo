@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import AttributesChar from '../../../../components/attributesChar';
+import AttributesChar from '../../../../components/attributesCharBars';
 
-export default function AttributesList() {
+export default function AttributesListBars() {
   return(
     <View>
       <AttributesChar 
