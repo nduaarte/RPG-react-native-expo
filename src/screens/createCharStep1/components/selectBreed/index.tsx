@@ -26,7 +26,7 @@ export default function SelectBreed() {
       <Text style={styles.title}>Escolha sua Raça</Text>
       <View style={styles.containerBreeds}>
         <TouchableOpacity style={styles.breed} onPress={() => chosingBreed('Elfo')}>
-          <Image style={styles.avatar} source={elf} />
+          <Image style={styles.avatar} style={{}} source={elf} />
           <Text style={styles.breedName}>Elfo</Text>
         </TouchableOpacity>
 

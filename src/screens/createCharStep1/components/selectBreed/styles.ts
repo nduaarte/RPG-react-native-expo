@@ -41,10 +41,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 3,
     color: '#403E3E'
-  },
-
-  elf: {
-    color: 'red'
   }
 });
 
