@@ -16,7 +16,7 @@ export default function CreateCharStep1() {
         <SelectClass />
         <ClassBreedChar />
       </ScrollView>
-      <BarCreateChar firstStep='#3E8BFF' navigate='CreateCharStep2'/>
+      <BarCreateChar screen='screen1' firstStep='#3E8BFF' navigate='CreateCharStep2'/>
     </View>
   );
 }
