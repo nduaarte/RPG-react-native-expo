@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   class: {
     fontFamily: 'Graduate_400Regular',
     fontSize: 35,
-    color: '#a0ad13'
   },
 
   breed: {
@@ -17,6 +16,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#363434'
   }
-})
+});
 
 export default styles;
