@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { useDispatch } from 'react-redux';
 
-import elf from '../../../../assets/images/elf.png';
-import argonian from '../../../../assets/images/argonian.png';
-import dwarf from '../../../../assets/images/dwarf.png';
-import human from '../../../../assets/images/human.png';
-import daedra from '../../../../assets/images/daedra.png';
-import hobbit from '../../../../assets/images/hobbit.png';
+import elf from '../../../../assets/images/breeds/elf.png';
+import argonian from '../../../../assets/images/breeds/argonian.png';
+import dwarf from '../../../../assets/images/breeds/dwarf.png';
+import human from '../../../../assets/images/breeds/human.png';
+import daedra from '../../../../assets/images/breeds/daedra.png';
+import hobbit from '../../../../assets/images/breeds/hobbit.png';
 
 
 import styles from './styles';

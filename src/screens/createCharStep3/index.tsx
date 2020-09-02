@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import BarCreateChar from '../../components/barCreateChar';
@@ -10,9 +10,13 @@ export default function CreateCharStep3() {
   return(
     <View style={styles.container}>
       <ScrollView>
-        <FontAwesome5 name='check' size={50} color={#17B026} />
+        <View style={styles.itens}>
+          <FontAwesome5 name='check' size={75} color='#519918' />
+          <Text style={styles.text}>Personagem</Text>
+          <Text style={styles.text}>Concluído!</Text>
+        </View>      
       </ScrollView>
-      <BarCreateChar />
+      <BarCreateChar thirdStep='#3E8BFF' navigate='Landing' />
     </View>
   );
 }

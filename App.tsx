@@ -17,7 +17,7 @@ export default function App() {
   } else {
     return (
       <Provider store={store}>
-        <EquipCharTab />
+        <CreateCharStack />
       </Provider>
     );
   }

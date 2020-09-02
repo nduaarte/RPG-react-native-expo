@@ -5,6 +5,7 @@ import TitleInfo from './components/titleInfo';
 import AttributeList from './components/attributsList';
 import BarCreateChar from '../../components/barCreateChar';
 
+
 export default function CreateChatStep2() {
   return(
     <View style={{flex: 1}}>
@@ -12,7 +13,7 @@ export default function CreateChatStep2() {
         <TitleInfo />
         <AttributeList />
       </ScrollView>
-      <BarCreateChar secondStep='#3E8BFF' />
+      <BarCreateChar secondStep='#3E8BFF' navigate='CreateCharStep3' />
     </View>
   );
 }
