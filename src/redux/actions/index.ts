@@ -1,37 +1,38 @@
-export function actionUpdateAttributePower(value: any) {
+export function actionUpdateAttributePower(value: number) {
   return { type: 'UPDATE_POWER', value };
 };
 
-export function actionUpdateAttributeDexterity(value: any) {
+export function actionUpdateAttributeDexterity(value: number) {
   return { type: 'UPDATE_DEXTERITY', value };
 };
 
-export function actionUpdateAttributeConstitution(value: any) {
+export function actionUpdateAttributeConstitution(value: number) {
   return { type: 'UPDATE_CONSTITUTION', value };
 };
 
-export function actionUpdateAttributeIntelligence(value: any) {
+export function actionUpdateAttributeIntelligence(value: number) {
   return { type: 'UPDATE_INTELLIGENCE', value };
 };
 
-export function actionUpdateAttributeCharisma(value: any) {
+export function actionUpdateAttributeCharisma(value: number) {
   return { type: 'UPDATE_CHARISMA', value };
 };
 
+export function actionUpdateAttributePoints(value: number) {
+  return { type: 'UPDATE_POINTS', value };
+};
 
 
-export function characterCreate(value: any) {
+
+export function characterCreate(value: boolean) {
   return { type: 'CHARACTER_CREATE', value }
 };
 
-export function characterName(value: any) {
-  return { type: 'CHARACTER_NAME', value };
-};
 
-export function characterBreed(value: any) {
+export function characterBreed(value: string) {
   return { type: 'CHARACTER_BREED', value };
 };
 
-export function characterClass(value: any) {
+export function characterClass(value: string) {
   return { type: 'CHARACTER_CLASS', value };
 };

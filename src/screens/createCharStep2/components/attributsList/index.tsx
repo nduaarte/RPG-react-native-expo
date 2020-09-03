@@ -25,6 +25,7 @@ export default function AttributeList() {
     dispatch({ type: 'UPDATE_CONSTITUTION', constitution});
     dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence});
     dispatch({ type: 'UPDATE_CHARISMA', charisma});
+    dispatch({ type: 'UPDATE_POINTS', pointsLeft});
   }, [power, intelligence, dexterity, constitution, charisma]);
 
   function incrementValue(attribute) {
