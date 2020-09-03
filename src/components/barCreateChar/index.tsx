@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Alert,  } from 'react-native';
+import { View, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'; 
 
@@ -31,11 +31,10 @@ export default function BarCreateChar(props) {
     if(screen === 'CreateCharStep3') return screen2();    
   }
 
-  console.log(points);
+  console.log(`points: ${points}`);
 
   return(
     <View style={styles.container}>
-      <Text>{points}</Text>
       <View style={styles.stepPins}>
         <FontAwesome style={styles.pins} color={props.firstStep || '#fff'} name='circle' size={13} />
         <FontAwesome style={styles.pins} color={props.secondStep || '#fff'} name='circle' size={13} />
