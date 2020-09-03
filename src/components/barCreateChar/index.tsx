@@ -20,7 +20,7 @@ export default function BarCreateChar(props) {
   }
 
   function screen2() {
-    if(points === 0) 
+    if(points === 1) 
       return navigation.navigate(props.navigate);
     else 
       return Alert.alert('Algo errado', 'Verifique se usou todos os pontos disponíveis.');
@@ -30,8 +30,6 @@ export default function BarCreateChar(props) {
     if(screen === 'CreateCharStep2') return screen1();
     if(screen === 'CreateCharStep3') return screen2();    
   }
-
-  console.log(`points: ${points}`);
 
   return(
     <View style={styles.container}>

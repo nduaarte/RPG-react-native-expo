@@ -18,14 +18,14 @@ export default function AttributeList() {
 
   useEffect(() => {
     setPointsLeft(50);
-    setPointsLeft(pointsLeft => pointsLeft -= usedPoints);
+    setPointsLeft(pointsLeft => pointsLeft - usedPoints);
 
     dispatch({ type: 'UPDATE_POWER', power});
     dispatch({ type: 'UPDATE_DEXTERITY', dexterity});
     dispatch({ type: 'UPDATE_CONSTITUTION', constitution});
     dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence});
     dispatch({ type: 'UPDATE_CHARISMA', charisma});
-    dispatch({ type: 'UPDATE_POINTS', pointsLeft});
+    dispatch({ type: 'UPDATE_POINTS', points: pointsLeft});
   }, [power, intelligence, dexterity, constitution, charisma]);
 
   function incrementValue(attribute) {
