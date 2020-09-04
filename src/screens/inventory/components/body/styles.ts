@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#e6e6e6',
     borderRadius: 5,
     borderWidth: 2,
-    borderColor: '#9ea3a1'
+    borderColor: '#9ea3a1',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
   armor: {
@@ -37,7 +39,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 2,
     borderColor: '#9ea3a1',
-    marginHorizontal: 15
+    marginHorizontal: 15,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 
   allSlotsContainer: {
@@ -46,6 +50,16 @@ const styles = StyleSheet.create({
 
   ajustLowSlot: {
     marginTop: 23
+  },
+
+  image: {
+    width: 50,
+    height: 50
+  },
+
+  imageArmor: {
+    width: 85,
+    height: 85
   }
 });
 
