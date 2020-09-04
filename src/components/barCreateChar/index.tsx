@@ -28,7 +28,8 @@ export default function BarCreateChar(props) {
 
   function checkToNavigate(screen: string) {
     if(screen === 'CreateCharStep2') return screen1();
-    if(screen === 'CreateCharStep3') return screen2();    
+    if(screen === 'CreateCharStep3') return screen2();
+    if(screen === 'Landing') return navigation.navigate(props.navigate);        
   }
 
   return(
@@ -39,7 +40,7 @@ export default function BarCreateChar(props) {
         <FontAwesome style={styles.pins} color={props.thirdStep || '#fff'} name='circle' size={13} />
       </View>
       <TouchableOpacity onPress={() => checkToNavigate(props.navigate)}>
-        <FontAwesome5 color='#fff' name='long-arrow-alt-right' size={40} />
+        <FontAwesome5 color='#fff' name={props.navigate === 'Landing'? 'long-arrow-alt-left' :'long-arrow-alt-right'} size={40} />
       </TouchableOpacity>
     </View>
   );

@@ -1,12 +1,16 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 
-import Slots from './components/inventory';
+import Body from './components/body';
+import Potions from './components/potions';
+import Bag from './components/bag';
 
 export default function Inventory() {
   return(
     <ScrollView>
-      <Slots />
+      <Body />
+      <Potions />
+      <Bag />
     </ScrollView>
   );
 }

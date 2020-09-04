@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import styles from './styles';
 
-export default function Slots() {
+export default function Body() {
   return(
     <View style={styles.container}>
       <Text style={styles.title}>Equipamento</Text>
@@ -28,26 +28,6 @@ export default function Slots() {
           <Text style={[styles.text, styles.ajustLowSlot]}>Direita</Text>
           <View style={styles.boxSlot} />
         </View>
-      </View>
-
-      <Text style={[styles.text, styles.ajustLowSlot]}>Poções</Text>
-      <View style={styles.potionsContainer}>
-        <View style={styles.inventorySlot} />
-        <View style={styles.inventorySlot} />
-        <View style={styles.inventorySlot} />
-      </View>
-
-      <Text style={[styles.text, styles.ajustLowSlot]}>Inventário</Text>
-      <View style={styles.inventoryContainer}>
-        <View  style={styles.inventorySlot} />
-        <View  style={styles.inventorySlot} />
-        <View  style={styles.inventorySlot} />
-        <View  style={styles.inventorySlot} />
-        <View  style={styles.inventorySlot} />
-        <View  style={styles.inventorySlot} />
-        <View  style={styles.inventorySlot} />
-        <View  style={styles.inventorySlot} />
-        <View  style={styles.inventorySlot} />
       </View>
     </View>
   );
