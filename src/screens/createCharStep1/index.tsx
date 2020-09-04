@@ -12,9 +12,9 @@ export default function CreateCharStep1() {
     <View style={{flex: 1, backgroundColor: '#E5E5E5'}}>
       <StatusBar style='dark' />
       <ScrollView>
+        <ClassBreedChar />
         <SelectBreed />
         <SelectClass />
-        <ClassBreedChar />
       </ScrollView>
       <BarCreateChar  firstStep='#3E8BFF' navigate='CreateCharStep2'/>
     </View>

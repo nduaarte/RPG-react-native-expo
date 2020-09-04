@@ -3,18 +3,19 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginBottom: 10
+    marginTop: 40
   },
 
   class: {
     fontFamily: 'Graduate_400Regular',
     fontSize: 35,
+    color: '#403E3E'
   },
 
   breed: {
     fontFamily: 'Graduate_400Regular',
     fontSize: 20,
-    color: '#363434'
+    color: '#444'
   }
 });
 

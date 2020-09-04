@@ -13,7 +13,7 @@ export default function Landing() {
   const createdChar = useSelector(state => state.infoCharacterReducer.create);
 
   function checkToCreateChar() {
-    if(createdChar == false) 
+    if(!createdChar) 
       return navigation.navigate('CreateCharStep1');
     else {
       Alert.alert(
@@ -26,9 +26,20 @@ export default function Landing() {
           },
           {
             text: 'Continuar',
-            onPress: () => navigation.navigate('CreateCharStep1')
+            onPress: () => navigation.navigate('CreateCharStep1'),
           }
         ]
+      );
+    }
+  }
+
+  function checkToStartGame() {
+    if(createdChar)
+      return navigation.navigate('EquipCharTab');
+    else {
+      Alert.alert(
+        'Personagem Inexistente', 
+        'Crie um personagem para iniciar o jogo.'
       );
     }
   }
@@ -37,7 +48,7 @@ export default function Landing() {
     <View style={styles.container}>
       <Image style={styles.image} source={ImageBg} />
       
-      <TouchableOpacity onPress={() => navigation.navigate('EquipCharTab')}>
+      <TouchableOpacity onPress={checkToStartGame}>
         <Text style={styles.text}>Iniciar Jogo</Text>
       </TouchableOpacity>
 

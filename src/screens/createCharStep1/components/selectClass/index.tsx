@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 
@@ -15,10 +15,13 @@ export default function selectClass() {
   const dispatch = useDispatch();
   const [chosenClass, setChosenClass] = useState('');
 
-  function chosingClass(classChar) {
+  function chosingClass(classChar: string) {
     setChosenClass(classChar);
-    dispatch({ type: 'CHARACTER_CLASS', class: chosenClass });
   }
+
+  useEffect(() => {
+    dispatch({ type: 'CHARACTER_CLASS', class: chosenClass });
+  }, [chosenClass]);
 
   return(
     <View style={styles.container}>

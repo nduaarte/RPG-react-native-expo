@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { useDispatch } from 'react-redux';
 
@@ -16,10 +16,13 @@ export default function SelectBreed() {
   const dispatch = useDispatch();
   const [chosenBreed, setChosenBreed] = useState('');
 
-  function chosingBreed(breed) {
-    setChosenBreed(breed);
-    dispatch({ type: 'CHARACTER_BREED', breed: chosenBreed });
+  function chosingBreed(breed: string) {
+    setChosenBreed(breed); 
   }
+
+  useEffect(() => {
+    dispatch({ type: 'CHARACTER_BREED', breed: chosenBreed });
+  }, [chosenBreed])
 
   return(
     <View style={styles.container}>
