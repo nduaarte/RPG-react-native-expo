@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { useDispatch } from 'react-redux';
 
 import BarCreateChar from '../../components/barCreateChar';
 
 import styles from './styles';
 
 export default function CreateCharStep3() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'CHARACTER_CREATE', create: true });
+  }, [])
+
   return(
     <View style={styles.container}>
       <ScrollView>
