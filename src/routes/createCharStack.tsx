@@ -6,7 +6,7 @@ import Landing from '../screens/landing';
 import CreateCharStep1 from '../screens/createCharStep1';
 import CreateCharStep2 from '../screens/createCharStep2';
 import CreateCharStep3 from '../screens/createCharStep3';
-
+import EquipCharTab from './equipCharTab';
 const { Navigator, Screen } = createStackNavigator();
 
 export default function createCharStack() {
@@ -16,7 +16,8 @@ export default function createCharStack() {
         <Screen name='Landing' component={Landing} />
         <Screen name='CreateCharStep1' component={CreateCharStep1} />
         <Screen name='CreateCharStep2' component={CreateCharStep2} />
-        <Screen name='CreateCharStep3' component={CreateCharStep3} />    
+        <Screen name='CreateCharStep3' component={CreateCharStep3} />
+        <Screen name='EquipCharTab' component={EquipCharTab} />    
       </Navigator>
     </NavigationContainer>
   );

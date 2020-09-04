@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, Text, TouchableOpacity, hairline } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 
 import ImageBg from '../../assets/gifs/pixel.gif';
@@ -13,9 +13,15 @@ export default function Landing() {
   return(
     <View style={styles.container}>
       <Image style={styles.image} source={ImageBg} />
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CreateCharStep1')}>
-        <Text style={styles.text}>Criar</Text>
-        <Text style={styles.text}>Personagem</Text>
+      
+      <TouchableOpacity onPress={() => navigation.navigate('EquipCharTab')}>
+        <Text style={styles.text}>Iniciar Jogo</Text>
+      </TouchableOpacity>
+
+      <View style={styles.line} />
+
+      <TouchableOpacity onPress={() => navigation.navigate('CreateCharStep1')}>
+        <Text style={styles.text2}>Criar Personagem</Text>
       </TouchableOpacity>
       <StatusBar style='light' />
     </View>

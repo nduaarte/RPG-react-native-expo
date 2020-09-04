@@ -5,7 +5,7 @@ import { store } from './src/redux/store';
 
 import { Graduate_400Regular, useFonts } from '@expo-google-fonts/graduate'
 import CreateCharStack from './src/routes/createCharStack';
-import EquipCharTab from './src/routes/equiptCharTab';
+import EquipCharTab from './src/routes/equipCharTab';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -17,7 +17,7 @@ export default function App() {
   } else {
     return (
       <Provider store={store}>
-        <EquipCharTab />
+        <CreateCharStack />
       </Provider>
     );
   }
