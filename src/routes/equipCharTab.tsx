@@ -1,13 +1,14 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import statsIcon from '../assets/icons/attributes.png';
 import inventoryIcon from '../assets/icons/inventoryIcon.png';
+import combatIcon from '../assets/icons/sword.png';
 
 import Stats from '../screens/stats';
 import Inventory from '../screens/inventory';
+import Combat from '../screens/combat';
 
 export default function EquipCharTab() {
   const { Navigator, Screen } = createBottomTabNavigator();
@@ -20,11 +21,21 @@ export default function EquipCharTab() {
             <Image source={statsIcon} style={{width: 30, height: 30}} />
           );
         }
-      }} />
+      }}/>
+
       <Screen name='Inventário' component={Inventory} options={{
         tabBarIcon: () => {
           return(
             <Image source={inventoryIcon} style={{width: 30, height: 30}} />
+          );
+        }
+      }} />
+
+      
+      <Screen name='Combat' component={Combat} options={{
+        tabBarIcon: () => {
+          return(
+            <Image source={combatIcon} style={{width: 30, height: 30}} />
           );
         }
       }} />
