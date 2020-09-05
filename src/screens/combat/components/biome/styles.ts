@@ -9,11 +9,15 @@ const styles = StyleSheet.create({
   biomeButton: {
     padding: 10,
     flexDirection: 'row',
+    borderRadius: 5,
+    alignItems: 'center',
+    width: '70%'
   },
 
   image: {
     width: 45,
-    height: 45
+    height: 45,
+    marginRight: 35
   },
 
   text: {
