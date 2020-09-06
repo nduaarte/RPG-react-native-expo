@@ -36,3 +36,9 @@ export function characterBreed(value: string) {
 export function characterClass(value: string) {
   return { type: 'CHARACTER_CLASS', value };
 };
+
+
+
+export function actionUpdateBiome(value: string) {
+  return { type: 'UPDATE_BIOME_IMAGE', value };
+};

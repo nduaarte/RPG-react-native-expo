@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import infoCharacterReducer from './infoCharacterReducer';
 import attributesReducer from './attributesReducer';
+import imageCombatBGReducer from './imageCombatBGReducer';
 
 export const Reducers = combineReducers({
   attributesReducer: attributesReducer,
-  infoCharacterReducer: infoCharacterReducer
+  infoCharacterReducer: infoCharacterReducer,
+  imageCombatBGReducer: imageCombatBGReducer
 });
