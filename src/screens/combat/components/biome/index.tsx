@@ -10,15 +10,20 @@ export default function Biome(props) {
   const navigation = useNavigation();
   const disptach = useDispatch();
 
-  useEffect(() => {
+  function updateBiome() {
     disptach({ type: 'UPDATE_BIOME_IMAGE', biome: props.name });
-  }, []);
+    navigate();
+  }
+
+  function navigate() {
+    return navigation.navigate('EnemyInfo');
+  }
       
   return(
     <View style={styles.container}>
       <RectButton 
         style={[styles.biomeButton, {backgroundColor: props.color}]}
-        onPress={() => navigation.navigate('EnemyInfo')}>
+        onPress={() => updateBiome()}>
         <Image style={styles.image} source={props.icon} />
         <Text style={styles.text}>{props.name}</Text>
       </RectButton>
