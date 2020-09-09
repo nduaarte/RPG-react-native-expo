@@ -2,6 +2,7 @@ const bandits = [
   {
     name: 'Humanos',
     biome: 'todos',
+    life: 12,
     damage: 6,
     armor: 3,
     loot: {
@@ -13,6 +14,7 @@ const bandits = [
   {
     name: 'Elfos',
     biome: 'todos',
+    life: 16,
     damage: 8,
     armor: 4,
     loot: {
@@ -24,6 +26,7 @@ const bandits = [
   {
     name: 'Orcs',
     biome: 'todos',
+    life: 19,
     damage: 12,
     armor: 7,
     loot: {

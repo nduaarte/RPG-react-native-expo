@@ -1,15 +1,32 @@
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import * as Progress from 'react-native-progress';
+import { useSelector } from 'react-redux';
 
-import data from '../../../../data/enemys';
+import data from '../../../../data/enemies';
 
 import styles from './styles';
 
 export default function InfoEnemy() {
   const enemies = data;
-  const chosenEnemy = Math.floor(Math.random() * enemies.length);
+  const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
+  let chosenEnemy = 0;
 
+  console.log(biome);
+
+
+  //nao funcionou, criar outra logica
+  useEffect(() => {
+    do() => {
+      chosenEnemy = Math.floor(Math.random() * enemies.length);
+      console.log(chosenEnemy);
+    }; 
+    while(
+      enemies[chosenEnemy].biome === biome 
+      || 
+      enemies[chosenEnemy].biome === 'todos'
+    );    
+  }, []);
 
   return(
     <View style={styles.container}>
@@ -20,7 +37,7 @@ export default function InfoEnemy() {
       </View>    
 
       <View style={styles.lifeContainer}>
-        <Text style={styles.text}>Vida:</Text>
+        <Text style={styles.textLife}>Vida: {enemies[chosenEnemy].life}</Text>
         <Progress.Bar 
           progress={1} 
           color='#CC1F1F' 

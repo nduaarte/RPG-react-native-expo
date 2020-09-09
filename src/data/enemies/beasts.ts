@@ -1,7 +1,8 @@
 const beasts = [
   {
     name: 'Urso',
-    biome: 'floresta',
+    biome: 'Floresta',
+    life: 16,
     damage: 10,
     armor: 6, 
     loot: {
@@ -12,7 +13,8 @@ const beasts = [
   },
   {
     name: 'Matilha de Lobos',
-    biome: 'floresta',
+    biome: 'Floresta',
+    life: 12,
     damage: 8,
     armor: 2,
     loot: {
@@ -23,7 +25,8 @@ const beasts = [
   },
   {
     name: 'Javali',
-    biome: 'floresta',
+    biome: 'Floresta',
+    life: 10,
     damage: 5,
     armor: 3,
     loot: {
@@ -31,7 +34,19 @@ const beasts = [
       gold: 5,
       xp: 14
     }
-  }
+  },
+  {
+    name: 'Macaco',
+    biome: 'Selva',
+    life: 24,
+    damage: 8,
+    armor: 3,
+    loot: {
+      item: 'couro',
+      gold: 10,
+      xp: 16
+    }
+  },
 ]
 
 export default beasts;

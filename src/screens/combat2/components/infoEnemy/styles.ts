@@ -28,7 +28,13 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Graduate_400Regular',
     color: '#fff',
-    fontSize: 20
+    fontSize: 22
+  },
+
+  textLife: {
+    fontFamily: 'Graduate_400Regular',
+    color: '#fff',
+    fontSize: 16
   }
 });
 
