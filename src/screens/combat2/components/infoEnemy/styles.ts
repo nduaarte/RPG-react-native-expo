@@ -7,12 +7,12 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     marginHorizontal: 30,
     borderRadius: 7,
-    top: '30%'
+    top: '15%'
   },
 
   title: {
     fontFamily: 'Graduate_400Regular',
-    fontSize: 32,
+    fontSize: 28,
     marginVertical: 20,
     color: '#fff'
   },
@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20
   }
-})
+});
 
 export default styles;
