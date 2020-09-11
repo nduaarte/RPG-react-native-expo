@@ -12,21 +12,26 @@ export default function InfoEnemy() {
   const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
   let chosenEnemy = 0;
 
-  console.log(biome);
-
-
-  //nao funcionou, criar outra logica
   useEffect(() => {
-    do() => {
-      chosenEnemy = Math.floor(Math.random() * enemies.length);
-      console.log(chosenEnemy);
-    }; 
-    while(
-      enemies[chosenEnemy].biome === biome 
-      || 
-      enemies[chosenEnemy].biome === 'todos'
-    );    
+    console.log(biome);
+
+    do() => { 
+      chosenEnemy = enemies.map(value => value.biome).map(value => value === biome);
+      console.log(enemies[chosenEnemy]);
+    }; while (chosenEnemy != -1);
   }, []);
+
+  // useEffect(() => {
+  //   do() => {
+  //     chosenEnemy = Math.floor(Math.random() * enemies.length);
+  //     console.log(chosenEnemy);
+  //   }; 
+  //   while(
+  //     enemies[chosenEnemy].biome == biome 
+  //     || 
+  //     enemies[chosenEnemy].biome == 'todos'
+  //   );    
+  // }, []);
 
   return(
     <View style={styles.container}>
