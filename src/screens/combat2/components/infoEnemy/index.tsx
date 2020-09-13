@@ -3,46 +3,39 @@ import { View, Text } from 'react-native';
 import * as Progress from 'react-native-progress';
 import { useSelector } from 'react-redux';
 
-import data from '../../../../data/enemies';
+import forest from '../../../../data/enemies/forest';
+import allBiomes from '../../../../data/enemies/allBiomes';
 
 import styles from './styles';
 
 export default function InfoEnemy() {
-  const enemies = data;
   const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
+  let currentBiome = allBiomes;
   let chosenEnemy = 0;
 
   useEffect(() => {
-    console.log(biome);
+    console.log(`${biome} foi o bioma escolhido`);
+    
+    switch(biome) {
+      case 'Floresta':
+        currentBiome = forest;
+    }
 
-    do() => { 
-      chosenEnemy = enemies.map(value => value.biome).map(value => value === biome);
-      console.log(enemies[chosenEnemy]);
-    }; while (chosenEnemy != -1);
+    chosenEnemy = Math.floor(Math.random() * currentBiome.length);
+    console.log(currentBiome[chosenEnemy]);
   }, []);
 
-  // useEffect(() => {
-  //   do() => {
-  //     chosenEnemy = Math.floor(Math.random() * enemies.length);
-  //     console.log(chosenEnemy);
-  //   }; 
-  //   while(
-  //     enemies[chosenEnemy].biome == biome 
-  //     || 
-  //     enemies[chosenEnemy].biome == 'todos'
-  //   );    
-  // }, [])
 
   return(
     <View style={styles.container}>
-      <Text style={styles.title}>{enemies[chosenEnemy].name}</Text>
+      <Text style={styles.title}>{currentBiome[chosenEnemy].name}</Text>
 
       <View style={styles.damageContainer}>
-        <Text style={styles.text}>Dano:   {enemies[chosenEnemy].damage}</Text>
+        <Text style={styles.text}>Dano:   {currentBiome[chosenEnemy].damage}</Text>
       </View>    
 
       <View style={styles.lifeContainer}>
-        <Text style={styles.textLife}>Vida: {enemies[chosenEnemy].life}</Text>
+        <Text style={styles.textLife}>Vida: {currentBiome[chosenEnemy].life}</Text>
         <Progress.Bar 
           progress={1} 
           color='#CC1F1F' 

@@ -1,7 +1,6 @@
 const beasts = [
   {
     name: 'Urso',
-    biome: 'Floresta',
     life: 16,
     damage: 10,
     armor: 6, 
@@ -13,7 +12,6 @@ const beasts = [
   },
   {
     name: 'Matilha de Lobos',
-    biome: 'Floresta',
     life: 12,
     damage: 8,
     armor: 2,
@@ -25,7 +23,6 @@ const beasts = [
   },
   {
     name: 'Javali',
-    biome: 'Floresta',
     life: 10,
     damage: 5,
     armor: 3,
@@ -37,7 +34,6 @@ const beasts = [
   },
   {
     name: 'Macaco',
-    biome: 'Selva',
     life: 24,
     damage: 8,
     armor: 3,
