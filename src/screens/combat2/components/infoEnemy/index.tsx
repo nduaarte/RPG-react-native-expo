@@ -31,7 +31,7 @@ export default function InfoEnemy() {
   //     || 
   //     enemies[chosenEnemy].biome == 'todos'
   //   );    
-  // }, []);
+  // }, [])
 
   return(
     <View style={styles.container}>
