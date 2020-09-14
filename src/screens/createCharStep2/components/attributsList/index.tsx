@@ -31,23 +31,23 @@ export default function AttributeList() {
   function incrementValue(attribute) {
     switch(attribute) {
       case 'power':
-        if(power < 14 && pointsLeft > 0)
+        if(power < 12 && pointsLeft > 0)
           setPower(power + 1);
         break;
       case 'intelligence':
-        if(intelligence < 14 && pointsLeft > 0)
+        if(intelligence < 12 && pointsLeft > 0)
           setTntelligence(intelligence + 1);
         break;
       case 'dexterity':
-        if(dexterity < 14 && pointsLeft > 0)
+        if(dexterity < 12 && pointsLeft > 0)
           setDexterity(dexterity + 1);
         break;
       case 'constitution':
-        if(constitution < 14 && pointsLeft > 0)
+        if(constitution < 12 && pointsLeft > 0)
           setConstitution(constitution + 1);
         break;
       case 'charisma':
-        if(charisma < 14 && pointsLeft > 0)
+        if(charisma < 12 && pointsLeft > 0)
           setCharisma(charisma + 1);
         break;        
     } 

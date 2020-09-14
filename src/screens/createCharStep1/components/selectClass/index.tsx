@@ -37,25 +37,31 @@ export default function selectClass() {
 
     switch(chosenClass) {
       case 'Ladino': 
-        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 2 });
+        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 6 });
+        dispatch({ type: 'UPDATE_CHARISMA', charisma: 4 });
         break;
       case 'Mago':
-        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 1 });
-        dispatch({ type: 'UPDATE_CHARISMA', charisma: 1 });
+        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 7 });
+        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 3 });
         break;
       case 'Necromante':
-        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 2 });
+        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 6 });
+        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 2 });
+        dispatch({ type: 'UPDATE_CHARISMA', charisma: 2 });
+
         break;
       case 'Paladino':
-        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 2 });
+        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 6 });
+        dispatch({ type: 'UPDATE_CHARISMA', charisma: 4 });
         break; 
       case 'Arqueiro':
-        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 1 });
-        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 1 });
+        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 7 });
+        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 3 });
         break;
       case 'Guerreiro':
-        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 1 });
-        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 1 });
+        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 3 });
+        dispatch({ type: 'UPDATE_POWER', power: 5 });
+        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 2 });
         break;
     } 
   }, [chosenClass]);
