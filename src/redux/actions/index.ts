@@ -24,10 +24,43 @@ export function actionUpdateAttributePoints(value: number) {
 
 
 
+export function actionUpdateMaxHealth(value: number) {
+  return { type: 'UPDATE_MAXHEALTH', value };
+};
+
+export function actionUpdateCurrentHealth(value: number) {
+  return { type: 'UPDATE_CURRENTHEALTH', value };
+};
+
+export function actionUpdateMaxMana(value: number) {
+  return { type: 'UPDATE_MAXMANA', value };
+};
+
+export function actionUpdateCurrentMana(value: number) {
+  return { type: 'UPDATE_CURRENTMANA', value };
+};
+
+export function actionUpdateMaxDexterity(value: number) {
+  return { type: 'UPDATE_MAXDEXTERITY', value };
+};
+
+export function actionUpdateCurrentDexterity(value: number) {
+  return { type: 'UPDATE_CURRENTDEXTERITY', value };
+};
+
+export function actionUpdateMaxExp(value: number) {
+  return { type: 'UPDATE_MAXEXP', value };
+};
+
+export function actionUpdateCurrentExp(value: number) {
+  return { type: 'UPDATE_CURRENTEXP', value };
+};
+
+
+
 export function characterCreate(value: boolean) {
   return { type: 'CHARACTER_CREATE', value }
 };
-
 
 export function characterBreed(value: string) {
   return { type: 'CHARACTER_BREED', value };

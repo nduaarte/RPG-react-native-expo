@@ -1,7 +1,7 @@
 const beasts = [
   {
     name: 'Urso',
-    life: 16,
+    life: 30,
     damage: 10,
     armor: 6, 
     loot: {

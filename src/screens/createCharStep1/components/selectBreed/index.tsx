@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import elf from '../../../../assets/images/breeds/elf.png';
 import argonian from '../../../../assets/images/breeds/argonian.png';
@@ -16,13 +16,35 @@ export default function SelectBreed() {
   const dispatch = useDispatch();
   const [chosenBreed, setChosenBreed] = useState('');
 
+  const mana = useSelector(state => state.attributesReducer.intelligence);
+  const health = useSelector(state => state.attributesReducer.constitution);
+  const stamina = useSelector(state => state.attributesReducer.dexterity);
+
+
+  function calculateModifier(value) {
+    let less = 3.5;
+    if(value % 2 === 0) {
+      less = 3;
+      
+    return value / 2 - less;
+  }
+
+  useEffect(() => {
+  console.log(calculateModifier(105));
+  }, [])
+
   function chosingBreed(breed: string) {
     setChosenBreed(breed); 
   }
 
   useEffect(() => {
     dispatch({ type: 'CHARACTER_BREED', breed: chosenBreed });
-  }, [chosenBreed])
+
+    switch(chosenBreed) {
+      case 'Anão':
+        return 
+    }
+  }, [chosenBreed]);
 
   return(
     <View style={styles.container}>
