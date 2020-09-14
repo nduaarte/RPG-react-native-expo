@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import paladinIcon from '../../../../assets/icons/escudo.png'
 import necromancerIcon from '../../../../assets/icons/cranio.png'
@@ -15,13 +15,59 @@ export default function selectClass() {
   const dispatch = useDispatch();
   const [chosenClass, setChosenClass] = useState('');
 
+  //variaveis apenas para depuração da store
+  const dexterity = useSelector(state => state.attributesReducer.dexterity);
+  const power = useSelector(state => state.attributesReducer.power);
+  const constitution = useSelector(state => state.attributesReducer.constitution);
+  const intelligence = useSelector(state => state.attributesReducer.intelligence);
+  const charisma = useSelector(state => state.attributesReducer.charisma);
+
   function chosingClass(classChar: string) {
     setChosenClass(classChar);
   }
 
   useEffect(() => {
     dispatch({ type: 'CHARACTER_CLASS', class: chosenClass });
+
+    dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 0 });
+    dispatch({ type: 'UPDATE_CHARISMA', charisma: 0 });
+    dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 0 });
+    dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 0 }); 
+    dispatch({ type: 'UPDATE_POWER', power: 0 }); 
+
+    switch(chosenClass) {
+      case 'Ladino': 
+        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 2 });
+        break;
+      case 'Mago':
+        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 1 });
+        dispatch({ type: 'UPDATE_CHARISMA', charisma: 1 });
+        break;
+      case 'Necromante':
+        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 2 });
+        break;
+      case 'Paladino':
+        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 2 });
+        break; 
+      case 'Arqueiro':
+        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 1 });
+        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 1 });
+        break;
+      case 'Guerreiro':
+        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 1 });
+        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 1 });
+        break;
+    } 
   }, [chosenClass]);
+
+  console.log(`
+    ${chosenClass}\n
+    Força: ${power}
+    Destreza: ${dexterity}
+    Inteligência: ${intelligence}
+    Constituição: ${constitution}
+    Carisma: ${charisma}
+  `);
 
   return(
     <View style={styles.container}>

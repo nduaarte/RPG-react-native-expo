@@ -10,21 +10,15 @@ import styles from './styles';
 
 export default function InfoEnemy() {
   const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
-  let currentBiome = allBiomes;
+  let currentBiome = forest;
   let chosenEnemy = 0;
 
-  useEffect(() => {
-    console.log(`${biome} foi o bioma escolhido`);
-    
-    switch(biome) {
-      case 'Floresta':
-        currentBiome = forest;
-    }
+  console.log(`${biome} foi o bioma escolhido`);
+  
+  if(biome === 'Floresta') currentBiome = forest;
 
-    chosenEnemy = Math.floor(Math.random() * currentBiome.length);
-    console.log(currentBiome[chosenEnemy]);
-  }, []);
-
+  chosenEnemy = Math.floor(Math.random() * currentBiome.length);
+  console.log(currentBiome[chosenEnemy].name);
 
   return(
     <View style={styles.container}>
