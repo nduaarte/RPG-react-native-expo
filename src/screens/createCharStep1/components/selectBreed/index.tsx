@@ -14,50 +14,14 @@ import styles from './styles';
 
 export default function SelectBreed() {
   const dispatch = useDispatch();
-  const intelligence = useSelector(state => state.attributesReducer.intelligence);
-  const constitution = useSelector(state => state.attributesReducer.constitution);
   const [chosenBreed, setChosenBreed] = useState('');
-
-  const breedsArr = [
-    { name: 'daedra', health: 9, mana: 20, stamina: 25 },
-    { name: 'elf', health: 9, mana: 30, stamina: 20 },
-    { name: 'hobbit', health: 8, mana: 20, stamina: 20 },
-    { name: 'dwarf', health: 12, mana: 10, stamina: 35 },
-    { name: 'human', health: 9, mana: 20, stamina: 20 },
-    { name: 'argonian', health: 11, mana: 10, stamina: 25 }
-  ];
 
   function chosingBreed(breed: string) {
     setChosenBreed(breed);
   }
 
-  // Calcula o modificador.
-  function calculateModifier(attribute, infoBreed) {
-    let less = 3.5;
-    if(attribute % 2 === 0)
-      less = 3;
-    return ((attribute / 2) - less) + infoBreed;
-  }
-
-  function passBreedAttributes() {
-    switch(chosenBreed) {
-      case 'Anão': 
-        // Se eu não conseguir entender isso, refazer lógica.
-        return { ...breedsArr, health: calculateModifier(constitution, breedsArr[3].health) };
-    }   
-  }
-
   useEffect(() => {
     dispatch({ type: 'CHARACTER_BREED', breed: chosenBreed });
-
-    // switch(chosenBreed) {
-    //   case 'Anão':
-    //     dispatch({ type: 'UPDATE_MAXHEALTH', value: calculateModifier(vida, 12) });
-    //     dispatch({ type: 'UPDATE_MAXMANA', value: calculateModifier(mana, 10) });
-    //     dispatch({ type: 'UPDATE_MAXESTAMINA', value: calculateModifier(stamina, 35) });
-    //     break;
-    //   case 'Elfo':
-    // }
   }, [chosenBreed]);
 
   return(

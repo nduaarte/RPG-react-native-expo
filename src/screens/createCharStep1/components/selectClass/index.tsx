@@ -67,12 +67,13 @@ export default function selectClass() {
   }, [chosenClass]);
 
   console.log(`
-    ${chosenClass}\n
+    ${chosenClass}
     Força: ${power}
     Destreza: ${dexterity}
     Inteligência: ${intelligence}
     Constituição: ${constitution}
     Carisma: ${charisma}
+    *esse console é das classes.
   `);
 
   return(

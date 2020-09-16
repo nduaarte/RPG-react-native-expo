@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './styles';
 
 export default function AttributeList() {
   const dispatch = useDispatch();
+  
+  const [power, setPower] = useState(useSelector(state => state.attributesReducer.power));
+  const [dexterity, setDexterity] = useState(useSelector(state => state.attributesReducer.dexterity));  
+  const [intelligence, setTntelligence] = useState(useSelector(state => state.attributesReducer.intelligence));
+  const [constitution, setConstitution] = useState(useSelector(state => state.attributesReducer.constitution));
+  const [charisma, setCharisma] = useState(useSelector(state => state.attributesReducer.charisma));
+  const [pointsLeft, setPointsLeft] = useState(40);
 
-  const [pointsLeft, setPointsLeft] = useState(50);
-  const [power, setPower] = useState(0);
-  const [intelligence, setTntelligence] = useState(0);
-  const [dexterity, setDexterity] = useState(0);
-  const [constitution, setConstitution] = useState(0);
-  const [charisma, setCharisma] = useState(0);
   var usedPoints = power + intelligence + dexterity + constitution + charisma;
 
   useEffect(() => {
-    setPointsLeft(50);
+    setPointsLeft(40);
     setPointsLeft(pointsLeft => pointsLeft - usedPoints);
 
     dispatch({ type: 'UPDATE_POWER', power});
@@ -28,7 +29,7 @@ export default function AttributeList() {
     dispatch({ type: 'UPDATE_POINTS', points: pointsLeft});
   }, [power, intelligence, dexterity, constitution, charisma]);
 
-  function incrementValue(attribute) {
+  function incrementValue(attribute: string) {
     switch(attribute) {
       case 'power':
         if(power < 12 && pointsLeft > 0)
@@ -53,7 +54,7 @@ export default function AttributeList() {
     } 
   }
 
-  function decrementValue(attribute) {
+  function decrementValue(attribute: string) {
     switch(attribute) {
       case 'power':
         if(power > 0)
