@@ -23,31 +23,26 @@ export default function CreateCharStep3() {
     { name: 'argonian', health: 11, mana: 10, stamina: 25 }
   ];
 
-  
-
   // Calcula o modificador.
   function calculateModifier(attribute: number, infoBreed: number) {
     let less = 3.5;
     if(attribute % 2 === 0)
       less = 3;
     return ((attribute / 2) - less) + infoBreed;
-  }
-
-  // Retonas os atributos padrões da raça + os atributos atuais.
- 
-  
+  }  
 
   useEffect(() => {
     switch(breed) {
       case 'Anão': 
-        health = calculateModifier(constitution, breedsArr[1].health),
-        stamina = calculateModifier(constitution, breedsArr[1].stamina),
-        mana = calculateModifier(intelligence, breedsArr[1].mana)     
+        health = calculateModifier(constitution, breedsArr[1].health);
+        stamina = calculateModifier(constitution, breedsArr[1].stamina);
+        mana = calculateModifier(intelligence, breedsArr[1].mana);
+        break;     
       case 'Elfo':
-        health = calculateModifier(constitution, breedsArr[1].health),
-        stamina = calculateModifier(constitution, breedsArr[1].stamina),
-        mana = calculateModifier(intelligence, breedsArr[1].mana)
-      case 'human':
+        health = calculateModifier(constitution, breedsArr[1].health);
+        stamina = calculateModifier(constitution, breedsArr[1].stamina);
+        mana = calculateModifier(intelligence, breedsArr[1].mana);
+        break;
     } 
 
     console.log(breed, health, mana, stamina); //aqui vai ser un dispatch

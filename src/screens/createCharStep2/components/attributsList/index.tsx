@@ -7,14 +7,14 @@ import styles from './styles';
 
 export default function AttributeList() {
   const dispatch = useDispatch();
-  
-  const [power, setPower] = useState(useSelector(state => state.attributesReducer.power));
-  const [dexterity, setDexterity] = useState(useSelector(state => state.attributesReducer.dexterity));  
-  const [intelligence, setTntelligence] = useState(useSelector(state => state.attributesReducer.intelligence));
-  const [constitution, setConstitution] = useState(useSelector(state => state.attributesReducer.constitution));
-  const [charisma, setCharisma] = useState(useSelector(state => state.attributesReducer.charisma));
-  const [pointsLeft, setPointsLeft] = useState(40);
 
+  const [power, setPower] = useState(0);
+  const [dexterity, setDexterity] = useState(0);  
+  const [intelligence, setTntelligence] = useState(0);
+  const [constitution, setConstitution] = useState(0);
+  const [charisma, setCharisma] = useState(0);
+
+  const [pointsLeft, setPointsLeft] = useState(40);
   var usedPoints = power + intelligence + dexterity + constitution + charisma;
 
   useEffect(() => {

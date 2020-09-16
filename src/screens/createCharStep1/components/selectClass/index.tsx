@@ -73,7 +73,6 @@ export default function selectClass() {
     Inteligência: ${intelligence}
     Constituição: ${constitution}
     Carisma: ${charisma}
-    *esse console é das classes.
   `);
 
   return(
