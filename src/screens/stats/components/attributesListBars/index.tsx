@@ -9,8 +9,8 @@ export default function AttributesListBars() {
   const currentHealth = useSelector(state => state.infoBarsReducer.currentHealth);
   const maxMana = useSelector(state => state.infoBarsReducer.maxMana);
   const currentMana = useSelector(state => state.infoBarsReducer.currentMana);
-  const maxDexterity = useSelector(state => state.infoBarsReducer.maxDexterity);
-  const currentDexterity = useSelector(state => state.infoBarsReducer.currentDexterity);
+  const maxStamina = useSelector(state => state.infoBarsReducer.maxStamina);
+  const currentStamina = useSelector(state => state.infoBarsReducer.currentStamina);
 
   return(
     <View>
@@ -31,15 +31,15 @@ export default function AttributesListBars() {
       <AttributesChar 
         attributeName='Estamina'
         color='#60AE31' 
-        currentValue={currentDexterity} 
-        totalValue={maxDexterity}      
+        currentValue={currentStamina} 
+        totalValue={maxStamina}      
       />
 
       <AttributesChar 
         attributeName='Experiência'
         color='#8ABDBD' 
-        currentValue={23} 
-        totalValue={60}      
+        currentValue={5} 
+        totalValue={10}      
       />
     </View>
   );

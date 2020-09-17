@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  create: true,
+  create: false,
   name: '',
   breed: '',
   class: '',

@@ -15,12 +15,20 @@ export default function selectClass() {
   const dispatch = useDispatch();
   const [chosenClass, setChosenClass] = useState('');
 
-  //variaveis apenas para depuração da store
+  // Variáveis e console apenas para a depuração da store.
   const dexterity = useSelector(state => state.attributesReducer.dexterity);
   const power = useSelector(state => state.attributesReducer.power);
   const constitution = useSelector(state => state.attributesReducer.constitution);
   const intelligence = useSelector(state => state.attributesReducer.intelligence);
   const charisma = useSelector(state => state.attributesReducer.charisma);
+  // console.log(`
+  //   ${chosenClass}
+  //   Força: ${power}
+  //   Destreza: ${dexterity}
+  //   Inteligência: ${intelligence}
+  //   Constituição: ${constitution}
+  //   Carisma: ${charisma}
+  // `);
 
   function chosingClass(classChar: string) {
     setChosenClass(classChar);
@@ -29,51 +37,8 @@ export default function selectClass() {
   useEffect(() => {
     dispatch({ type: 'CHARACTER_CLASS', class: chosenClass });
 
-    dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 0 });
-    dispatch({ type: 'UPDATE_CHARISMA', charisma: 0 });
-    dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 0 });
-    dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 0 }); 
-    dispatch({ type: 'UPDATE_POWER', power: 0 }); 
-
-    switch(chosenClass) {
-      case 'Ladino': 
-        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 6 });
-        dispatch({ type: 'UPDATE_CHARISMA', charisma: 4 });
-        break;
-      case 'Mago':
-        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 7 });
-        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 3 });
-        break;
-      case 'Necromante':
-        dispatch({ type: 'UPDATE_INTELLIGENCE', intelligence: 6 });
-        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 2 });
-        dispatch({ type: 'UPDATE_CHARISMA', charisma: 2 });
-
-        break;
-      case 'Paladino':
-        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 6 });
-        dispatch({ type: 'UPDATE_CHARISMA', charisma: 4 });
-        break; 
-      case 'Arqueiro':
-        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 7 });
-        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 3 });
-        break;
-      case 'Guerreiro':
-        dispatch({ type: 'UPDATE_DEXTERITY', dexterity: 3 });
-        dispatch({ type: 'UPDATE_POWER', power: 5 });
-        dispatch({ type: 'UPDATE_CONSTITUTION', constitution: 2 });
-        break;
-    } 
+ 
   }, [chosenClass]);
-
-  console.log(`
-    ${chosenClass}
-    Força: ${power}
-    Destreza: ${dexterity}
-    Inteligência: ${intelligence}
-    Constituição: ${constitution}
-    Carisma: ${charisma}
-  `);
 
   return(
     <View style={styles.container}>

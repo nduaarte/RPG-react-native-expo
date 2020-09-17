@@ -41,11 +41,11 @@ export function actionUpdateCurrentMana(value: number) {
 };
 
 export function actionUpdateMaxDexterity(value: number) {
-  return { type: 'UPDATE_MAXDEXTERITY', value };
+  return { type: 'UPDATE_MAXSTAMINA', value };
 };
 
 export function actionUpdateCurrentDexterity(value: number) {
-  return { type: 'UPDATE_CURRENTDEXTERITY', value };
+  return { type: 'UPDATE_CURRENTSTAMINA', value };
 };
 
 export function actionUpdateMaxExp(value: number) {

@@ -3,8 +3,8 @@ const INITIAL_STATE = {
   currentHealth: 0,
   maxMana: 0,
   currentMana: 0,
-  maxDexterity: 0,
-  currentDexterity: 0,
+  maxStamina: 0,
+  currentStamina: 0,
   maxExp: 0,
   currentExp: 0
 }
@@ -19,10 +19,10 @@ function infoBarsReducer(state = INITIAL_STATE, action) {
       return { ...state, maxMana: action.value };
     case 'UPDATE_CURRENTMANA':
       return { ...state, currentMana: action.value };
-    case 'UPDATE_MAXDEXTERITY':
-      return { ...state, maxDexterity: action.value };
-    case 'UPDATE_CURRENTDEXTERITY':
-      return { ...state, currentDexterity: action.value };
+    case 'UPDATE_MAXSTAMINA':
+      return { ...state, maxStamina: action.value };
+    case 'UPDATE_CURRENTSTAMINA':
+      return { ...state, currentStamina: action.value };
     case 'UPDATE_MAXEXP':
       return { ...state, maxExp: action.value };
     case 'UPDATE_CURRENTEXP':

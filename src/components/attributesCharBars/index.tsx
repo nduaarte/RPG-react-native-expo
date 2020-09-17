@@ -6,7 +6,8 @@ import styles from './styles';
 
 export default function AttributesCharBars(props) {
   const barValue = ((props.currentValue * 100) / props.totalValue) / 100;
-
+  barValue.toFixed(2);
+  
   return(
     <View style={styles.container}>
       <View style={styles.barInfo}>
@@ -22,7 +23,7 @@ export default function AttributesCharBars(props) {
           borderWidth={2}
           color={props.color}
           borderColor='#000'
-          />
+        />
       </View>
     </View>
   );
