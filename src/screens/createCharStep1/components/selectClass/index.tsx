@@ -21,23 +21,21 @@ export default function selectClass() {
   const constitution = useSelector(state => state.attributesReducer.constitution);
   const intelligence = useSelector(state => state.attributesReducer.intelligence);
   const charisma = useSelector(state => state.attributesReducer.charisma);
-  // console.log(`
-  //   ${chosenClass}
-  //   Força: ${power}
-  //   Destreza: ${dexterity}
-  //   Inteligência: ${intelligence}
-  //   Constituição: ${constitution}
-  //   Carisma: ${charisma}
-  // `);
+  console.log(`
+    ${chosenClass}
+    Força: ${power}
+    Destreza: ${dexterity}
+    Inteligência: ${intelligence}
+    Constituição: ${constitution}
+    Carisma: ${charisma}
+  `);
 
   function chosingClass(classChar: string) {
     setChosenClass(classChar);
   }
 
   useEffect(() => {
-    dispatch({ type: 'CHARACTER_CLASS', class: chosenClass });
-
- 
+    dispatch({ type: 'CHARACTER_CLASS', class: chosenClass }); 
   }, [chosenClass]);
 
   return(
