@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, Image, Text, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux';
 
-import ImageBg from '../../assets/gifs/pixel.gif';
+import ImageBg1 from '../../assets/gifs/pixel.gif';
+import ImageBg2 from '../../assets/gifs/disfigure.gif';
 
 import styles from './styles';
 
 export default function Landing() {
   const navigation = useNavigation();
   const createdChar = useSelector(state => state.infoCharacterReducer.create);
+
+  function choseImageBg() {
+    let numberChose = Math.floor(Math.random() * 2 + 1);
+    if(numberChose === 2)
+      return ImageBg1;
+    else
+      return ImageBg2;
+  }
 
   function checkToCreateChar() {
     if(!createdChar) 
@@ -46,7 +55,7 @@ export default function Landing() {
 
   return(
     <View style={styles.container}>
-      <Image style={styles.image} source={ImageBg} />
+      <Image style={styles.image} resizeMode='stretch' source={choseImageBg()} />
       
       <TouchableOpacity onPress={checkToStartGame}>
         <Text style={styles.text}>Iniciar Jogo</Text>

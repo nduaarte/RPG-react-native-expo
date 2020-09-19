@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { ImageBackground } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import desert from '../../assets/images/desertBG.jpg'
-import snow from '../../assets/images/snowBG.jpg'
-import aquatic from '../../assets/images/aquaticBG.jpg'
-import rock from '../../assets/images/rockBG.jpg'
-import forest from '../../assets/images/forestBG.jpg'
-import jungle from '../../assets/images/jungleBG.jpg'
+import desert from '../../assets/images/biomesImages/desertBG.jpg'
+import snow from '../../assets/images/biomesImages/snowBG.jpg'
+import aquatic from '../../assets/images/biomesImages/aquaticBG.jpg'
+import rock from '../../assets/images/biomesImages/rockBG.jpg'
+import forest from '../../assets/images/biomesImages/forestBG.jpg'
+import jungle from '../../assets/images/biomesImages/jungleBG.jpg'
 
 import InfoEnemy from './components/infoEnemy';
 
