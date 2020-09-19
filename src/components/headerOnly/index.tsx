@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import styles from './styles';
 
-export default function classBreedChar() {
+export default function HeaderOnly() {
   const charClass = useSelector(state => state.infoCharacterReducer.class);
   const charBreed = useSelector(state => state.infoCharacterReducer.breed);
 

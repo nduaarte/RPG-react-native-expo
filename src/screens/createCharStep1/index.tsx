@@ -4,7 +4,7 @@ import { View, ScrollView } from 'react-native';
 
 import SelectBreed from './components/selectBreed';
 import SelectClass from './components/selectClass';
-import ClassBreedChar from '../../components/classBreedChar';
+import HeaderOnly from '../../components/headerOnly';
 import BarCreateChar from '../../components/barCreateChar';
 
 export default function CreateCharStep1() {
@@ -12,7 +12,7 @@ export default function CreateCharStep1() {
     <View style={{flex: 1, backgroundColor: '#E5E5E5'}}>
       <StatusBar style='dark' />
       <ScrollView>
-        <ClassBreedChar />
+        <HeaderOnly />
         <SelectBreed />
         <SelectClass />
       </ScrollView>
