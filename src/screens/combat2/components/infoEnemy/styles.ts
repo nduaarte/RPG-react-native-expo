@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     marginHorizontal: 30,
     borderRadius: 7,
-    top: '15%'
+    marginTop: 40
   },
 
   title: {
