@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 60,
+    marginHorizontal: 90,
+    marginVertical: 20
   },
 
   input: {

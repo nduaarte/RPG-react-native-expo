@@ -8,8 +8,12 @@ export default function Input() {
     <View style={styles.container}>
       <TextInput 
         style={styles.input} 
-        keyboardType='numeric' 
-        placeholder='Insira o valor do dado' 
+        keyboardType='number-pad' 
+        placeholder='Insira o valor do dado..'
+        clearButtonMode='always'
+        keyboardAppearance='dark'
+        maxLength={2}
+        returnKeyType='done'
       />
     </View>
   );

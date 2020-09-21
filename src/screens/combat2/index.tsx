@@ -10,7 +10,9 @@ import forest from '../../assets/images/biomesImages/forestBG.jpg'
 import jungle from '../../assets/images/biomesImages/jungleBG.jpg'
 
 import InfoEnemy from './components/infoEnemy';
+import Skills from './components/skills';
 import Input from './components/input';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Combat2() {
   const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
@@ -27,8 +29,11 @@ export default function Combat2() {
 
   return(
     <ImageBackground style={{width: '100%', height: '100%'}} source={image}>
-      <InfoEnemy />
-      <Input />
+      <ScrollView>
+        <InfoEnemy />
+        <Input />
+        <Skills />
+      </ScrollView>
     </ImageBackground>
   );
 }
