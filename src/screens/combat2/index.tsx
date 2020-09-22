@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ImageBackground } from 'react-native';
 import { useSelector } from 'react-redux';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import desert from '../../assets/images/biomesImages/desertBG.jpg'
 import snow from '../../assets/images/biomesImages/snowBG.jpg'
@@ -12,7 +13,7 @@ import jungle from '../../assets/images/biomesImages/jungleBG.jpg'
 import InfoEnemy from './components/infoEnemy';
 import Skills from './components/skills';
 import Input from './components/input';
-import { ScrollView } from 'react-native-gesture-handler';
+import CombatLog from './components/combatLog';
 
 export default function Combat2() {
   const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
@@ -28,12 +29,11 @@ export default function Combat2() {
   }, [])
 
   return(
-    <ImageBackground style={{width: '100%', height: '100%'}} source={image}>
-      <ScrollView>
-        <InfoEnemy />
-        <Input />
-        <Skills />
-      </ScrollView>
+    <ImageBackground style={{flex: 1, width: '100%', height: '40%'}} source={image}>
+      <InfoEnemy />
+      <Input />
+      <Skills />
+      <CombatLog />
     </ImageBackground>
   );
 }

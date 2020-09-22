@@ -9,7 +9,7 @@ export default function Input() {
       <TextInput 
         style={styles.input} 
         keyboardType='number-pad' 
-        placeholder='Insira o valor do dado..'
+        placeholder='Insira o valor do dado'
         clearButtonMode='always'
         keyboardAppearance='dark'
         maxLength={2}

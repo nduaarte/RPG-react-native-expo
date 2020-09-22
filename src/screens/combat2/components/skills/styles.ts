@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 50,
-    height: 50
+    width: 40,
+    height: 40
   },
 
   buttonDefaultAttack: {
@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#000'
   },
-
+  //#cf3732
   buttonHability: {
-    backgroundColor: '#cf3732',
+    backgroundColor: '#6e4482',
     alignItems: 'center',
     padding: 10,
     borderRadius: 10,

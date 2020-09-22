@@ -3,7 +3,7 @@ import { View, Image } from 'react-native';
 import { useSelector } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';
 
-import habilityImg from '../../../../assets/images/skills/heal.png';
+import habilityImg from '../../../../assets/images/skills/summon.png';
 import defaultAttackImg from '../../../../assets/images/skills/default-attack.png';
 
 import styles from './styles';
