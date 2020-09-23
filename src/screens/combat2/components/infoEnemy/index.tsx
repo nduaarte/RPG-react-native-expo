@@ -3,35 +3,29 @@ import { View, Text } from 'react-native';
 import * as Progress from 'react-native-progress';
 import { useSelector } from 'react-redux';
 
-import forest from '../../../../data/enemies/forest';
-import allBiomes from '../../../../data/enemies/allBiomes';
-
 import styles from './styles';
 
 export default function InfoEnemy() {
   const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
-  let currentBiome = forest;
-  let chosenEnemy = 0;
-
-  console.log(`${biome} foi o bioma escolhido`);
   
-  if(biome === 'Floresta') currentBiome = forest;
-
-  chosenEnemy = Math.floor(Math.random() * currentBiome.length);
-  console.log(currentBiome[chosenEnemy].name);
+  const name = useSelector(state => state.currentEnemyInfoReducer.name);
+  const maxLife = useSelector(state => state.currentEnemyInfoReducer.maxLife);
+  const currentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
+  const damage = useSelector(state => state.currentEnemyInfoReducer.damage);
+  const armor = useSelector(state => state.currentEnemyInfoReducer.armor);
 
   return(
     <View style={styles.container}>
-      <Text style={styles.title}>{currentBiome[chosenEnemy].name}</Text>
+      <Text style={styles.title}>{name}</Text>
 
       <View style={styles.damageContainer}>
-        <Text style={styles.text}>Dano:   {currentBiome[chosenEnemy].damage}</Text>
+        <Text style={styles.text}>Dano:   {damage}</Text>
       </View>    
 
       <View style={styles.lifeContainer}>
-        <Text style={styles.textLife}>Vida: {currentBiome[chosenEnemy].life}</Text>
+        <Text style={styles.textLife}>Vida: {currentLife}/{maxLife}</Text>
         <Progress.Bar 
-          progress={1} 
+          progress={currentLife/10} 
           color='#CC1F1F' 
           borderRadius={2} 
           borderColor='#fff'

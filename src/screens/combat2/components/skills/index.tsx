@@ -14,12 +14,12 @@ export default function Skills(props) {
   const [passive, setPassive] = useState();
 
   // Para setar quais vão ser as imagens e skills a serem exibidas na tela.
-  switch(classChar) {
-    case 'Mago':
-      setPassive();
-      setHability();
-      break;
-  }
+  // switch(classChar) {
+  //   case 'Mago':
+  //     setPassive();
+  //     setHability();
+  //     break;
+  // }
 
   return(
     <View style={styles.container}>

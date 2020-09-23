@@ -15,21 +15,6 @@ export default function selectClass() {
   const dispatch = useDispatch();
   const [chosenClass, setChosenClass] = useState('');
 
-  // Variáveis e console apenas para a depuração da store.
-  const dexterity = useSelector(state => state.attributesReducer.dexterity);
-  const power = useSelector(state => state.attributesReducer.power);
-  const constitution = useSelector(state => state.attributesReducer.constitution);
-  const intelligence = useSelector(state => state.attributesReducer.intelligence);
-  const charisma = useSelector(state => state.attributesReducer.charisma);
-  console.log(`
-    ${chosenClass}
-    Força: ${power}
-    Destreza: ${dexterity}
-    Inteligência: ${intelligence}
-    Constituição: ${constitution}
-    Carisma: ${charisma}
-  `);
-
   function chosingClass(classChar: string) {
     setChosenClass(classChar);
   }

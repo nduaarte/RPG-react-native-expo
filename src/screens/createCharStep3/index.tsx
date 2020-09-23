@@ -127,10 +127,6 @@ export default function CreateCharStep3() {
     dispatch({ type: 'CHARACTER_CREATE', create: true });
   }, []);
 
-  console.log(`maxHealth: ${useSelector(state => state.infoBarsReducer.maxHealth)}`);
-  console.log(`maxStamina: ${useSelector(state => state.infoBarsReducer.maxStamina)}`);
-  console.log(`maxMana: ${useSelector(state => state.infoBarsReducer.maxMana)}`);
-
   return(
     <View style={styles.container}>
       <ScrollView>

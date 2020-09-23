@@ -1,4 +1,4 @@
-const beasts = [
+const forest = [
   {
     name: 'Urso',
     life: 30,
@@ -45,4 +45,4 @@ const beasts = [
   },
 ]
 
-export default beasts;
+export default forest;
