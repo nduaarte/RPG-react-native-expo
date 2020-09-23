@@ -1,3 +1,35 @@
+export function actionUpdateMaxHealth(value: number) {
+  return { type: 'UPDATE_MAXHEALTH', value };
+};
+
+export function actionUpdateCurrentHealth(value: number) {
+  return { type: 'UPDATE_CURRENTHEALTH', value };
+};
+
+export function actionUpdateMaxMana(value: number) {
+  return { type: 'UPDATE_MAXMANA', value };
+};
+
+export function actionUpdateCurrentMana(value: number) {
+  return { type: 'UPDATE_CURRENTMANA', value };
+};
+
+export function actionUpdateMaxDexterity(value: number) {
+  return { type: 'UPDATE_MAXSTAMINA', value };
+};
+
+export function actionUpdateCurrentDexterity(value: number) {
+  return { type: 'UPDATE_CURRENTSTAMINA', value };
+};
+
+export function actionUpdateMaxExp(value: number) {
+  return { type: 'UPDATE_MAXEXP', value };
+};
+
+export function actionUpdateCurrentExp(value: number) {
+  return { type: 'UPDATE_CURRENTEXP', value };
+};
+
 const INITIAL_STATE = {
   maxHealth: 0,
   currentHealth: 0,

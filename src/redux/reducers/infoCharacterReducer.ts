@@ -1,3 +1,15 @@
+export function characterCreate(value: boolean) {
+  return { type: 'CHARACTER_CREATE', value }
+};
+
+export function characterBreed(value: string) {
+  return { type: 'CHARACTER_BREED', value };
+};
+
+export function characterClass(value: string) {
+  return { type: 'CHARACTER_CLASS', value };
+};
+
 const INITIAL_STATE = {
   create: false,
   name: '',

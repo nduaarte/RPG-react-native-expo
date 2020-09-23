@@ -1,3 +1,7 @@
+export function actionUpdateBiome(value: string) {
+  return { type: 'UPDATE_BIOME_IMAGE', value };
+};
+
 const INITIAL_STATE = {
   biomeImageName: ''
 }
