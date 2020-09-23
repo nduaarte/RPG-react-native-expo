@@ -21,13 +21,9 @@ export default function Combat2() {
   const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
   const [image, setImage] = useState(forest);
 
-  // Estado que vai receber o biome escolhido.
   const currentBiome = forestEnemies; 
-
-  // Serve para gerar o inimigo aleatório do bioma escolhido.
   const chosenEnemy = Math.floor(Math.random() * currentBiome.length);
 
-  // useEffect para ver qual bioma o usuário escolheu e dispachar valores do inimigo para store.
   useEffect(() => {
     dispatch({ type: 'UPDATE_NAME_ENEMY', value: currentBiome[chosenEnemy].name });
     dispatch({ type: 'UPDATE_MAXLIFE_ENEMY', value: currentBiome[chosenEnemy].life });

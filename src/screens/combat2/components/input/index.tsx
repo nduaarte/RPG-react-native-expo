@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, TextInput } from 'react-native';
+import { useDispatch } from 'react-redux';
 
 import styles from './styles';
 
 export default function Input() {
+  const dispatch = useDispatch();
+  const [valueDice, setValueDice] = useState();
+
+  useEffect(() => {
+    //dispatch({ type })
+  }, [valueDice]);
+
   return(
     <View style={styles.container}>
       <TextInput 
@@ -14,6 +22,7 @@ export default function Input() {
         keyboardAppearance='dark'
         maxLength={2}
         returnKeyType='done'
+        value={valueDice}
       />
     </View>
   );

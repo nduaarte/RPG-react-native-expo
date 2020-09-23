@@ -21,6 +21,10 @@ export default function Skills(props) {
   //     break;
   // }
 
+  function attackEnemy() {
+    
+  }
+
   return(
     <View style={styles.container}>
       <RectButton style={styles.buttonHability}>
