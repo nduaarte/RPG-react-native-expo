@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 import infoCharacterReducer from './infoCharacterReducer';
 import attributesReducer from './attributesReducer';
-import imageCombatBGReducer from './imageCombatBGReducer';
+import combatReducer from './combatReducer';
 import infoBarsReducer from './infoBarsReducer';
 import currentEnemyInfoReducer from './currentEnemyInfoReducer';
 
 export const Reducers = combineReducers({
   attributesReducer: attributesReducer,
   infoCharacterReducer: infoCharacterReducer,
-  imageCombatBGReducer: imageCombatBGReducer,
+  combatReducer: combatReducer,
   infoBarsReducer: infoBarsReducer,
   currentEnemyInfoReducer: currentEnemyInfoReducer
 });

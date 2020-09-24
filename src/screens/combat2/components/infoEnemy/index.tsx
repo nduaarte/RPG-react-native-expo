@@ -6,13 +6,13 @@ import { useSelector } from 'react-redux';
 import styles from './styles';
 
 export default function InfoEnemy() {
-  const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
+  const biome = useSelector(state => state.combatReducer.biomeImageName);
   
-  const name = useSelector(state => state.currentEnemyInfoReducer.name);
-  const maxLife = useSelector(state => state.currentEnemyInfoReducer.maxLife);
-  const currentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
-  const damage = useSelector(state => state.currentEnemyInfoReducer.damage);
-  const armor = useSelector(state => state.currentEnemyInfoReducer.armor);
+  const name = useSelector(state => state.combatReducer.name);
+  const maxLife = useSelector(state => state.combatReducer.maxLife);
+  const currentLife = useSelector(state => state.combatReducer.currentLife);
+  const damage = useSelector(state => state.combatReducer.damage);
+  const armor = useSelector(state => state.combatReducer.armor);
 
   return(
     <View style={styles.container}>

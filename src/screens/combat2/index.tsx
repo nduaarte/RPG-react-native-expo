@@ -18,7 +18,7 @@ import CombatLog from './components/combatLog';
 
 export default function Combat2() {
   const dispatch = useDispatch();
-  const biome = useSelector(state => state.imageCombatBGReducer.biomeImageName);
+  const biome = useSelector(state => state.combatReducer.biomeImageName);
   const [image, setImage] = useState(forest);
 
   const currentBiome = forestEnemies; 

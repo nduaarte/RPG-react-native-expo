@@ -9,7 +9,7 @@ export default function Input() {
   const [valueDice, setValueDice] = useState();
 
   useEffect(() => {
-    //dispatch({ type })
+    dispatch({ type: 'UPDATE_VALUEDICE', value: valueDice });
   }, [valueDice]);
 
   return(
