@@ -6,10 +6,12 @@ import styles from './styles';
 
 export default function Input() {
   const dispatch = useDispatch();
-  const [valueDice, setValueDice] = useState();
+  const [valueDice, setValueDice] = useState('');
+
+  let convertValue = parseInt(valueDice);
 
   useEffect(() => {
-    dispatch({ type: 'UPDATE_VALUEDICE', value: valueDice });
+    dispatch({ type: 'UPDATE_VALUEDICE', value: convertValue });
   }, [valueDice]);
 
   return(
@@ -22,7 +24,7 @@ export default function Input() {
         keyboardAppearance='dark'
         maxLength={2}
         returnKeyType='done'
-        value={valueDice}
+        onChangeText={value => setValueDice(value)}
       />
     </View>
   );

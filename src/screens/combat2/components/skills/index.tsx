@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Alert } from 'react-native';
 import { useSelector } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';
 
@@ -8,21 +8,34 @@ import defaultAttackImg from '../../../../assets/images/skills/default-attack.pn
 
 import styles from './styles';
 
-export default function Skills(props) {
-  const classChar = useSelector(state => state.infoCharacterReducer.class);
-  const [hability, setHability] = useState();
-  const [passive, setPassive] = useState();
+export default function Skills() {
+  let valueDice = useSelector(state => state.combatReducer.valueDice);
+  const dexterity = useSelector(state => state.attributesReducer.dexterity);
 
-  // Para setar quais vão ser as imagens e skills a serem exibidas na tela.
-  // switch(classChar) {
-  //   case 'Mago':
-  //     setPassive();
-  //     setHability();
-  //     break;
-  // }
+  const enemyName = useSelector(state => state.currentEnemyInfoReducer.name);
+  const enemyMaxLife = useSelector(state => state.currentEnemyInfoReducer.maxLife);
+  const enemyCurrentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
+  const enemyDamage = useSelector(state => state.currentEnemyInfoReducer.damage);
+  const enemyArmor = useSelector(state => state.currentEnemyInfoReducer.armor);
 
-  function attackEnemy() {
-    
+  function calculateModifier(attribute: number) {
+    let less = 3.5;
+    if(attribute % 2 === 0)
+      less = 3;
+    return (attribute / 2) - less;
+  }
+  
+
+  //parou aqui, essa porra nao quer funcionar, if e else pegando!!
+  function calculateDamage(attribute: number) {
+    console.log(valueDice);
+    if(valueDice == NaN) {
+      console.log('notvrau');
+      return Alert.alert('Insira o valor tirado no dado!');
+    } else {
+      console.log('vrau');
+      return valueDice + calculateModifier(attribute);
+    }
   }
 
   return(
@@ -31,7 +44,7 @@ export default function Skills(props) {
         <Image style={styles.image} source={habilityImg} />
       </RectButton>
 
-      <RectButton style={styles.buttonDefaultAttack}>
+      <RectButton style={styles.buttonDefaultAttack} onPress={() => calculateDamage(dexterity)}>
         <Image style={styles.image} source={defaultAttackImg} />
       </RectButton>
     </View>

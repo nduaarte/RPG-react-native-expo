@@ -6,26 +6,23 @@ import { useSelector } from 'react-redux';
 import styles from './styles';
 
 export default function InfoEnemy() {
-  const biome = useSelector(state => state.combatReducer.biomeImageName);
-  
-  const name = useSelector(state => state.combatReducer.name);
-  const maxLife = useSelector(state => state.combatReducer.maxLife);
-  const currentLife = useSelector(state => state.combatReducer.currentLife);
-  const damage = useSelector(state => state.combatReducer.damage);
-  const armor = useSelector(state => state.combatReducer.armor);
+  const enemyName = useSelector(state => state.currentEnemyInfoReducer.name);
+  const enemyMaxLife = useSelector(state => state.currentEnemyInfoReducer.maxLife);
+  const enemyCurrentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
+  const enemyDamage = useSelector(state => state.currentEnemyInfoReducer.damage);
 
   return(
     <View style={styles.container}>
-      <Text style={styles.title}>{name}</Text>
+      <Text style={styles.title}>{enemyName}</Text>
 
       <View style={styles.damageContainer}>
-        <Text style={styles.text}>Dano:   {damage}</Text>
+        <Text style={styles.text}>Dano:   {enemyDamage}</Text>
       </View>    
 
       <View style={styles.lifeContainer}>
-        <Text style={styles.textLife}>Vida: {currentLife}/{maxLife}</Text>
+        <Text style={styles.textLife}>Vida: {enemyCurrentLife}/{enemyMaxLife}</Text>
         <Progress.Bar 
-          progress={currentLife/10} 
+          progress={enemyCurrentLife/10}
           color='#CC1F1F' 
           borderRadius={2} 
           borderColor='#fff'
