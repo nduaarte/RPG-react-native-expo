@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Image, Alert } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';
 
 import habilityImg from '../../../../assets/images/skills/summon.png';
@@ -9,7 +9,9 @@ import defaultAttackImg from '../../../../assets/images/skills/default-attack.pn
 import styles from './styles';
 
 export default function Skills() {
-  let valueDice = useSelector(state => state.combatReducer.valueDice);
+  const dispatch = useDispatch();
+
+  const valueDice = useSelector(state => state.combatReducer.valueDice);
   const dexterity = useSelector(state => state.attributesReducer.dexterity);
 
   const enemyName = useSelector(state => state.currentEnemyInfoReducer.name);
@@ -25,17 +27,20 @@ export default function Skills() {
     return (attribute / 2) - less;
   }
   
-
-  //parou aqui, essa porra nao quer funcionar, if e else pegando!!
+  //
   function calculateDamage(attribute: number) {
-    console.log(valueDice);
-    if(valueDice == NaN) {
-      console.log('notvrau');
-      return Alert.alert('Insira o valor tirado no dado!');
-    } else {
-      console.log('vrau');
-      return valueDice + calculateModifier(attribute);
-    }
+    console.log(`valor do dano: ${valueDice + calculateModifier(attribute)}`);
+    return valueDice + calculateModifier(attribute);    
+  }
+
+  function calculateDefense(armor: number, life: number) {
+    console.log(`valor da defesa: ${armor + life}`)
+    return armor + life;
+  }
+
+  function attack() {
+    let resultAttack =  calculateDefense(enemyArmor, enemyCurrentLife) - calculateDamage(dexterity);
+    dispatch({ type: 'UPDATE_CURRENTLIFE_ENEMY', value: resultAttack });
   }
 
   return(
@@ -44,7 +49,7 @@ export default function Skills() {
         <Image style={styles.image} source={habilityImg} />
       </RectButton>
 
-      <RectButton style={styles.buttonDefaultAttack} onPress={() => calculateDamage(dexterity)}>
+      <RectButton style={styles.buttonDefaultAttack} onPress={() => attack()}>
         <Image style={styles.image} source={defaultAttackImg} />
       </RectButton>
     </View>

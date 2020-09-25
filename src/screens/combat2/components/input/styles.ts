@@ -4,7 +4,8 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 90,
     marginTop: 55,
-    marginBottom: 20
+    marginBottom: 20,
+    alignItems: 'center'
   },
 
   input: {

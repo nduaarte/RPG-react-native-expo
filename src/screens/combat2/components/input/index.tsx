@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { View, TextInput } from 'react-native';
+import { View } from 'react-native';
+import NumericInput from 'react-native-numeric-input'
 import { useDispatch } from 'react-redux';
 
 import styles from './styles';
 
 export default function Input() {
   const dispatch = useDispatch();
-  const [valueDice, setValueDice] = useState('');
-
-  let convertValue = parseInt(valueDice);
+  const [valueDice, setValueDice] = useState(Number);
 
   useEffect(() => {
-    dispatch({ type: 'UPDATE_VALUEDICE', value: convertValue });
+    dispatch({ type: 'UPDATE_VALUEDICE', value: valueDice });
   }, [valueDice]);
 
   return(
     <View style={styles.container}>
-      <TextInput 
-        style={styles.input} 
-        keyboardType='number-pad' 
-        placeholder='Insira o valor do dado'
-        clearButtonMode='always'
-        keyboardAppearance='dark'
-        maxLength={2}
-        returnKeyType='done'
-        onChangeText={value => setValueDice(value)}
+      <NumericInput 
+        onChange={value => setValueDice(value)}
+        maxValue={8}
+        minValue={1}
+        totalWidth={180}
+        totalHeight={55}
+        initValue={1}
+        type='up-down'
+        rounded
       />
     </View>
   );
