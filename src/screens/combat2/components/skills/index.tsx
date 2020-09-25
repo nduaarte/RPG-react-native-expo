@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Image, Alert } from 'react-native';
+import React from 'react';
+import { View, Image } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';
 
