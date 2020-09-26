@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Image } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 import habilityImg from '../../../../assets/images/skills/summon.png';
 import defaultAttackImg from '../../../../assets/images/skills/default-attack.png';
@@ -10,6 +11,7 @@ import styles from './styles';
 
 export default function Skills() {
   const dispatch = useDispatch();
+  const navigation = useNavigation();
 
   const valueDice = useSelector(state => state.combatReducer.valueDice);
   const dexterity = useSelector(state => state.attributesReducer.dexterity);
@@ -27,14 +29,11 @@ export default function Skills() {
     return (attribute / 2) - less;
   }
   
-  //
   function calculateDamage(attribute: number) {
-    console.log(`valor do dano: ${valueDice + calculateModifier(attribute)}`);
     return valueDice + calculateModifier(attribute);    
   }
 
   function calculateDefense(armor: number, life: number) {
-    console.log(`valor da defesa: ${armor + life}`)
     return armor + life;
   }
 

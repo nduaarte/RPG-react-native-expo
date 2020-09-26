@@ -14,9 +14,16 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
 
-  text: {
+  textUser: {
     left: 45,
-    color: '#257827'
+    color: '#257827',
+    fontFamily: 'Graduate_400Regular'
+  },
+
+  textEnemy: {
+    left: 45,
+    color: '#a82f2f',
+    fontFamily: 'Graduate_400Regular'
   }
 });
 
