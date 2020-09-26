@@ -7,13 +7,14 @@ import Img from '../../../../assets/images/userLogCombat.png';
 import styles from './styles';
 
 export default function CombatLog() {
-  const afterAttackUser = useSelector(state => state.combatReducer.afterAttack); //chegar isso, valor nao entrando
-  const dataUser = [1, 2];
-  const dataEnemy = [3, 4];
+  const [afterAttackUser, setAfterAttackUser] = useState(useSelector(state => state.combatReducer.afterAttack));
+  const [dataUser, setDataUser] = useState([]);
+  const dataEnemy = [Number];
 
   useEffect(() => {
-    console.log(afterAttackUser);
-    dataUser.push(afterAttackUser);
+    setDataUser(dataUser => [...dataUser, afterAttackUser]);
+    console.log(dataUser);
+    console.log(`Novo dano: ${afterAttackUser}`);
   }, [afterAttackUser]);
 
   return(
@@ -21,13 +22,15 @@ export default function CombatLog() {
       <Text style={styles.title}>Registro do Combate</Text>
       <View>
         {
-          dataUser.map((item, index) => {
-            return <Text style={styles.textUser} key={index}>Você infligiu {item} de dano</Text>
+          dataUser.map((damage, index) => {
+            if(index != 0)
+              return <Text style={styles.textUser} key={index}>Você infligiu {damage} de dano</Text>
           })
         }
         {
-          dataEnemy.map((item, index) => {
-            return <Text style={styles.textEnemy} key={index}>Você foi atacado com {item} de dano</Text>
+          dataEnemy.map((damage, index) => {
+            if(index != 0)
+              return <Text style={styles.textEnemy} key={index}>Você foi atacado com {damage} de dano</Text>
           })
         }
       </View>

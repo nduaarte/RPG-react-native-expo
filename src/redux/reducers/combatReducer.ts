@@ -16,7 +16,7 @@ const INITIAL_STATE = {
   afterAttack: 0,
 }
 
-function combatReducer(state = INITIAL_STATE, action: { type: any; biome: any; value: number }) {
+function combatReducer(state = INITIAL_STATE, action: { type: any; biome: string; value: number }) {
   switch(action.type) {
     case 'UPDATE_BIOME_IMAGE':
       return { ...state, biomeImageName: action.biome }

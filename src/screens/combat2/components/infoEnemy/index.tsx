@@ -11,6 +11,8 @@ export default function InfoEnemy() {
   const enemyCurrentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
   const enemyDamage = useSelector(state => state.currentEnemyInfoReducer.damage);
 
+  const barValue = ((enemyCurrentLife * 100) / enemyMaxLife) / 100;
+
   return(
     <View style={styles.container}>
       <Text style={styles.title}>{enemyName}</Text>
@@ -22,7 +24,7 @@ export default function InfoEnemy() {
       <View style={styles.lifeContainer}>
         <Text style={styles.textLife}>Vida: {enemyCurrentLife}/{enemyMaxLife}</Text>
         <Progress.Bar 
-          progress={enemyCurrentLife/10}
+          progress={barValue}
           color='#CC1F1F' 
           borderRadius={2} 
           borderColor='#fff'
