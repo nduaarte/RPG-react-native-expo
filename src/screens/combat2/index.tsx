@@ -30,7 +30,6 @@ export default function Combat2() {
     dispatch({ type: 'UPDATE_CURRENTLIFE_ENEMY', value: currentBiome[chosenEnemy].life });
     dispatch({ type: 'UPDATE_DAMAGE_ENEMY', value: currentBiome[chosenEnemy].damage });
     dispatch({ type: 'UPDATE_ARMOR_ENEMY', value: currentBiome[chosenEnemy].armor });
-    dispatch({ type: 'UPDATE_AFTERATTACK', value: 0 });
 
     switch(biome) {
       case 'Deserto':

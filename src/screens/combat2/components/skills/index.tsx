@@ -37,14 +37,11 @@ export default function Skills() {
     return armor + life;
   }
 
-  function afterAttack(attribute: number, armor: number) {
-    return attribute - armor;
-  }
-
   function attack() {
-    let resultAttack =  calculateDefense(enemyArmor, enemyCurrentLife) - calculateDamage(dexterity);
+    let resultAttack = calculateDefense(enemyArmor, enemyCurrentLife) - calculateDamage(dexterity);
+    let afterAttack = calculateDamage(dexterity) - enemyArmor;
     dispatch({ type: 'UPDATE_CURRENTLIFE_ENEMY', value: resultAttack });
-    dispatch({ type: 'UPDATE_AFTERATTACK', value: afterAttack(dexterity, enemyArmor) });
+    dispatch({ type: 'UPDATE_AFTERATTACK', value: afterAttack });
   }
 
   return(
