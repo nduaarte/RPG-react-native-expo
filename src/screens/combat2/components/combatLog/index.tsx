@@ -14,10 +14,12 @@ export default function CombatLog() {
   const [dataUser, setDataUser] = useState(Array);
   const [dataEnemy, setDataEnemy] = useState(Array);
 
+  console.log(currentEnemyLife);
+  
   useEffect(() => {
     setDataUser(dataUser => [...dataUser, afterAttackUser]);
     console.log(`tamanho do array: ${dataUser.length}`);
-  }, [afterAttackUser]); //mesmo valor nao atualiza, arranjar maneira de atualizar
+  }, [afterAttackUser]);
 
   return(
     <ImageBackground style={styles.container} resizeMode='stretch' source={Img}>

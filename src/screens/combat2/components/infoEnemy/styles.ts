@@ -3,38 +3,48 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#000',
-    opacity: 0.8,
-    marginHorizontal: 30,
-    borderRadius: 7,
-    marginTop: 40
+    margin: 30
   },
 
-  title: {
-    fontFamily: 'Graduate_400Regular',
-    fontSize: 28,
-    marginVertical: 20,
-    color: '#fff'
-  },
-
-  damageContainer: {
-    flexDirection: 'row'
+  imageBG: {
+    width: 350,
+    height: 200,
+    borderRadius: 5,
+    position: 'absolute'
   },
 
   lifeContainer: {
-    marginVertical: 30
+    alignSelf: 'flex-start',
+    width: '79%',
+    marginTop: 5,
+    opacity: 0.9
+  },
+
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
 
   text: {
     fontFamily: 'Graduate_400Regular',
     color: '#fff',
+    fontSize: 18
+  },
+
+  enemyContainer: {
+    marginTop: 22,
+    alignItems: 'center'
+  },
+
+  enemyTitle: {
+    fontFamily: 'Graduate_400Regular',
+    color: '#fff',
     fontSize: 22
   },
 
-  textLife: {
-    fontFamily: 'Graduate_400Regular',
-    color: '#fff',
-    fontSize: 16
+  enemyImage: {
+    width: 100,
+    height: 100,
   }
 });
 
