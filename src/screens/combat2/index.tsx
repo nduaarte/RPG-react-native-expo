@@ -25,7 +25,8 @@ export default function Combat2() {
   return(
     <View style={{flex: 1}}>
       <InfoEnemy />
-
+      <Input />
+      <Skills/>
     </View>
   );
 }

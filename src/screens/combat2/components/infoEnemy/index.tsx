@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, ImageBackground } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import * as Progress from 'react-native-progress';
 import { useSelector } from 'react-redux';
 
@@ -22,7 +22,8 @@ export default function InfoEnemy() {
   const enemyDamage = useSelector(state => state.currentEnemyInfoReducer.damage);
   const [image, setImage] = useState(forest);
 
-  const barValue = ((enemyCurrentLife * 100) / enemyMaxLife) / 100;
+  let barValue = ((enemyCurrentLife * 100) / enemyMaxLife) / 100;
+  console.log(barValue);
 
   useEffect(() => {
     switch(biome) {
@@ -60,7 +61,7 @@ export default function InfoEnemy() {
           color='#CC1F1F'
           borderColor='#000'
           borderWidth={2}
-          borderRadius={2}
+          borderRadius={5}
           width={250}
           height={20}
         />

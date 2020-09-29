@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    margin: 30
+    marginHorizontal: 30,
+    marginTop: 30
   },
 
   imageBG: {
