@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { View } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import forestEnemies from '../../data/enemies/forest';
 
 import InfoEnemy from './components/infoEnemy';
 import Skills from './components/skills';
 import Input from './components/input';
-import CombatLog from './components/combatLog';
+import InfoChar from './components/infoChar';
 
 export default function Combat2() {
   const dispatch = useDispatch();
@@ -27,6 +27,7 @@ export default function Combat2() {
       <InfoEnemy />
       <Input />
       <Skills/>
+      <InfoChar />
     </View>
   );
 }
