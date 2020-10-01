@@ -25,18 +25,18 @@ export default function InfoChar() {
       <View style={styles.firstInfo}>
         <Image style={styles.avatar} source={avatar} />
       
-        <View>
+        <View style={styles.align}>
           <Text style={styles.classText}>{classChar}</Text>
           <Text style={styles.breedText}>{breedChar}</Text>
         </View>
 
-        <View style={styles.goldContainer}>
+        <View style={styles.align}>
+          <Text style={styles.goldText}>444</Text>
           <Image style={styles.imageGold} source={gold} />
-          <Text style={styles.text}>97831</Text>
         </View>   
       </View>
 
-      <View style={styles.barsContainer}>
+      <View>
         <AttributesChar 
           attributeName='Vida'
           color='#CC1F1F' 

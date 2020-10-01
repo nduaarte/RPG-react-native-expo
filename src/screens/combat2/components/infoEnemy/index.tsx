@@ -57,10 +57,10 @@ export default function InfoEnemy() {
           <Text style={styles.text}>{enemyCurrentLife}/{enemyMaxLife}</Text>
         </View>
         <Progress.Bar
-          progress={barValue}
+          progress={0.7}
           color='#CC1F1F'
-          borderColor='#000'
-          borderWidth={2}
+          borderColor='#1E1E1E'
+          borderWidth={3}
           borderRadius={5}
           width={250}
           height={20}
