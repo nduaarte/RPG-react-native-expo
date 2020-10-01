@@ -43,6 +43,15 @@ const styles = StyleSheet.create({
     fontSize: 22
   },
 
+  textBloodEnemy: {
+    fontFamily: 'Graduate_400Regular',
+    position: 'absolute',
+    fontSize: 30,
+    left: 95,
+    color: '#CC1F1F',
+    alignSelf: 'flex-end'
+  },
+
   enemyImage: {
     width: 100,
     height: 100,

@@ -9,18 +9,7 @@ const forest = [
       gold: 5,
       xp: 14
     }
-  },
-  {
-    name: 'Urso',
-    life: 13,
-    damage: 7,
-    armor: 6,
-    loot: {
-      item: 'Couro',
-      gold: 7,
-      xp: 9
-    }
-  },
+  }
 ]
 
 export default forest;
