@@ -5,9 +5,15 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 30,
     marginTop: 25,
-    backgroundColor: '#bac7d4',
+    backgroundColor: '#ded3b8',
     borderTopLeftRadius: 20,
-    borderTopRightRadius: 20
+    borderTopRightRadius: 20,
+    borderWidth: 2,
+    borderColor: '#1c1c1c'
+  },
+
+  lignImage: {
+    width: '90%'
   },
 
   firstInfo: {
@@ -41,14 +47,15 @@ const styles = StyleSheet.create({
     fontSize: 15
   },
 
+  goldText: {
+    fontFamily: 'Graduate_400Regular',
+    fontSize: 16,
+    top: 7
+  },
+
   imageGold: {
     width: 43,
     height: 43,
-  },
-
-  goldText: {
-    fontFamily: 'Graduate_400Regular',
-    fontSize: 16
   }
 })
 

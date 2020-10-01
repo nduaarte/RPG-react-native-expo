@@ -24,7 +24,7 @@ export default function InfoChar() {
     <View style={styles.container}>
       <View style={styles.firstInfo}>
         <Image style={styles.avatar} source={avatar} />
-      
+
         <View style={styles.align}>
           <Text style={styles.classText}>{classChar}</Text>
           <Text style={styles.breedText}>{breedChar}</Text>
@@ -32,7 +32,7 @@ export default function InfoChar() {
 
         <View style={styles.align}>
           <Text style={styles.goldText}>444</Text>
-          <Image style={styles.imageGold} source={gold} />
+          <Image style={styles.imageGold} resizeMode='center' source={gold} />
         </View>   
       </View>
 
