@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Image } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';

@@ -18,15 +18,20 @@ export function actionUpdateArmorEnemy(value: number) {
   return { type: 'UPDATE_ARMOR_ENEMY', value }
 };
 
+export function actionUpdateImageEnemy(value: number) {
+  return { type: 'UPDATE_IMAGE_ENEMY', value }
+};
+
 const INITIAL_STATE = {
   name: '',
   maxLife: 0,
   currentLife: 0,
   damage: 0,
   armor: 0,
+  image: ''
 };
 
-function currentEnemyInfoReducer(state = INITIAL_STATE, action: { type: any; value: any; }) {
+function currentEnemyInfoReducer(state = INITIAL_STATE, action: { type: any; value: any }) {
   switch(action.type) {
     case 'UPDATE_NAME_ENEMY':
       return { ...state, name: action.value };
@@ -38,6 +43,8 @@ function currentEnemyInfoReducer(state = INITIAL_STATE, action: { type: any; val
       return { ...state, damage: action.value };
     case 'UPDATE_ARMOR_ENEMY':
       return { ...state, armor: action.value };
+    case 'UPDATE_IMAGE_ENEMY':
+      return { ...state, image: action.value }
     default:
       return state;
   }

@@ -11,25 +11,22 @@ import rock from '../../../../assets/images/biomesImages/rockBG.jpg';
 import forest from '../../../../assets/images/biomesImages/forestBG.jpg';
 import jungle from '../../../../assets/images/biomesImages/jungleBG.jpg';
 
-import enemy from '../../../../assets/images/enemys/bear.png'; //imagen deve ser pega da store
-
 import styles from './styles';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function InfoEnemy() {
   const biome = useSelector(state => state.combatReducer.biomeImageName);
   const afterAttack = useSelector(state => state.combatReducer.afterAttack);
 
+  const enemyImage = useSelector(state => state.currentEnemyInfoReducer.image);
   const enemyName = useSelector(state => state.currentEnemyInfoReducer.name);
   const enemyMaxLife = useSelector(state => state.currentEnemyInfoReducer.maxLife);
   const enemyCurrentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
   const enemyDamage = useSelector(state => state.currentEnemyInfoReducer.damage);
 
-  let barValue = 1;
+  let barValue = ((enemyCurrentLife * 100) / enemyMaxLife) / 100;
 
   const [image, setImage] = useState(forest);
   useEffect(() => {
-    barValue = ((enemyCurrentLife * 100) / enemyMaxLife) / 100;
     switch(biome) {
       case 'Deserto':
         setImage(desert);
@@ -77,7 +74,7 @@ export default function InfoEnemy() {
       </View>
       <View style={styles.enemyContainer}>
         <Text style={styles.enemyTitle}>{enemyName}</Text>
-        <Image style={styles.enemyImage} source={enemy} />
+        <Image style={styles.enemyImage} source={enemyImage} />
 
         <Animatable.View
           animation='fadeOutUp'
