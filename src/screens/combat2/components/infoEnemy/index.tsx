@@ -14,6 +14,7 @@ import jungle from '../../../../assets/images/biomesImages/jungleBG.jpg';
 import enemy from '../../../../assets/images/enemys/bear.png'; //imagen deve ser pega da store
 
 import styles from './styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function InfoEnemy() {
   const biome = useSelector(state => state.combatReducer.biomeImageName);
@@ -51,25 +52,9 @@ export default function InfoEnemy() {
     }
   }, []);
 
-  const [hideHit, setHideHit] = useState(false);
-
+  const animatableRef = useRef<Animatable.View & View>(null); // Code tirado do github.
   useEffect(() => {
-    setHideHit(true);
-    console.log(hideHit);
-    var render: any;
-
-    if(hideHit) {
-      render = (
-        <Animatable.Text 
-          style={styles.textBloodEnemy}
-          animation='fadeInUp'
-          duration={1500}
-          iterationCount='infinite'
-          onAnimationEnd={() => setHideHit(false)}>
-          {afterAttack}
-        </Animatable.Text>
-      );
-    }
+    animatableRef.current.fadeOutUp();
   }, [afterAttack]);
 
   return(
@@ -94,7 +79,12 @@ export default function InfoEnemy() {
         <Text style={styles.enemyTitle}>{enemyName}</Text>
         <Image style={styles.enemyImage} source={enemy} />
 
-        <View>{render}</View>
+        <Animatable.View
+          animation='fadeOutUp'
+          duration={1750}
+          ref={animatableRef}>
+          <Text style={styles.textBloodEnemy}>{afterAttack}</Text>   
+        </Animatable.View>
       </View>
     </View>
   );

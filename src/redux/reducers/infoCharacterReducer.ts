@@ -11,18 +11,15 @@ export function characterClass(value: string) {
 };
 
 const INITIAL_STATE = {
-  create: false,
-  name: '',
-  breed: '',
-  class: '',
+  create: true,
+  breed: 'darkElf',
+  class: 'Rogue',
 };
 
- function infoCharacterReducer(state = INITIAL_STATE, action: { type: any; create: any; name: any; breed: any; class: any; }) {
+ function infoCharacterReducer(state = INITIAL_STATE, action: { type: any; create: any; breed: any; class: any; }) {
   switch(action.type) {
     case 'CHARACTER_CREATE':
       return { ...state, create: action.create };
-    case 'CHARACTER_NAME':
-      return { ...state, name: action.name };
     case 'CHARACTER_BREED':
       return { ...state, breed: action.breed };
     case 'CHARACTER_CLASS':

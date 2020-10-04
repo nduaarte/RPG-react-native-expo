@@ -47,9 +47,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Graduate_400Regular',
     position: 'absolute',
     fontSize: 30,
-    left: 95,
+    left: 30,
     color: '#CC1F1F',
-    alignSelf: 'flex-end'
+    alignSelf: 'flex-end',
+    top: -60
   },
 
   enemyImage: {

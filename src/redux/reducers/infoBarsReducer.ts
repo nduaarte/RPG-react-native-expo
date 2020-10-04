@@ -31,12 +31,12 @@ export function actionUpdateCurrentExp(value: number) {
 };
 
 const INITIAL_STATE = {
-  maxHealth: 0,
-  currentHealth: 0,
-  maxMana: 0,
-  currentMana: 0,
-  maxStamina: 0,
-  currentStamina: 0,
+  maxHealth: 20,
+  currentHealth: 20,
+  maxMana: 20,
+  currentMana: 20,
+  maxStamina: 20,
+  currentStamina: 20,
   maxExp: 0,
   currentExp: 0
 }

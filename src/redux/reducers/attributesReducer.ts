@@ -23,12 +23,12 @@ export function actionUpdateAttributePoints(value: number) {
 };
 
 const INITIAL_STATE = {
-  power: 0,
-  intelligence: 0,
-  dexterity: 0,
-  constitution: 0,
-  charisma: 0,
-  points: 0
+  power: 30,
+  intelligence: 30,
+  dexterity: 30,
+  constitution: 30,
+  charisma: 30,
+  points: 30
 };
 
 
