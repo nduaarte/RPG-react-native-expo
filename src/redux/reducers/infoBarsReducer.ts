@@ -41,7 +41,7 @@ const INITIAL_STATE = {
   currentExp: 0
 }
 
-function infoBarsReducer(state = INITIAL_STATE, action) {
+function infoBarsReducer(state = INITIAL_STATE, action: { type: any; value: any; }) {
   switch(action.type) {
     case 'UPDATE_MAXHEALTH':
       return { ...state, maxHealth: action.value };

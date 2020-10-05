@@ -11,7 +11,6 @@ import styles from './styles';
 
 export default function Skills() {
   const dispatch = useDispatch();
-  const navigation = useNavigation();
 
   const valueDice = useSelector(state => state.combatReducer.valueDice);
   const dexterity = useSelector(state => state.attributesReducer.dexterity);
@@ -42,6 +41,7 @@ export default function Skills() {
     let afterAttack = calculateDamage(dexterity) - enemyArmor;
     dispatch({ type: 'UPDATE_CURRENTLIFE_ENEMY', value: resultAttack });
     dispatch({ type: 'UPDATE_AFTERATTACK', value: afterAttack });
+    dispatch({ type: 'UPDATE_ENEMY_ATTACK_CHECK', value: true });
   }
 
   return(
