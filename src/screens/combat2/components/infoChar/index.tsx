@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, InteractionManager } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
 
@@ -26,11 +26,13 @@ export default function InfoChar() {
 
   const animatableRefAvatar = useRef<Animatable.Image & Image>(null); // Code tirado do github.
   useEffect(() => {
-    if(enemyAttackCheck) {
-      animatableRefAvatar.current.swing();
-      dispatch({ type: 'UPDATE_CURRENTHEALTH', value: currentHealth - enemyDamage });
-      dispatch({ type: 'UPDATE_ENEMY_ATTACK_CHECK', value: false });
-    }
+    InteractionManager.runAfterInteractions(() => {
+      if(enemyAttackCheck) {
+        animatableRefAvatar.current.swing();
+        dispatch({ type: 'UPDATE_CURRENTHEALTH', value: currentHealth - enemyDamage });
+        dispatch({ type: 'UPDATE_ENEMY_ATTACK_CHECK', value: false });
+      }
+    });
   }, [enemyAttackCheck]);
 
   return(
