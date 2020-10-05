@@ -11,7 +11,7 @@ import AttributesChar from '../../../../components/attributesCharBars';
 import styles from './styles';
 
 export default function InfoChar() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const breedChar = useSelector(state => state.infoCharacterReducer.breed);
   const classChar = useSelector(state => state.infoCharacterReducer.class);
   const maxHealth = useSelector(state => state.infoBarsReducer.maxHealth);
@@ -30,7 +30,7 @@ export default function InfoChar() {
       if(enemyAttackCheck) {
         Vibration.vibrate(1000);
         animatableRefAvatar.current.swing();
-        dispatch({ type: 'UPDATE_CURRENTHEALTH', value: currentHealth - enemyDamage });
+        dispatch({ type: 'UPDATE_CURRENTHEALTH', value: (currentHealth + 5) - enemyDamage });
         dispatch({ type: 'UPDATE_ENEMY_ATTACK_CHECK', value: false });
       }
     });

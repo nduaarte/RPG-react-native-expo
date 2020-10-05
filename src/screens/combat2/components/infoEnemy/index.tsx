@@ -61,6 +61,7 @@ export default function InfoEnemy() {
   return(
     <View style={styles.container}>
       <Image style={styles.imageBG} source={image} />
+      
       <View style={styles.lifeContainer}>
         <View style={styles.row}>
           <Text style={styles.text}>Vida:</Text>
@@ -76,6 +77,7 @@ export default function InfoEnemy() {
           height={20}
         />
       </View>
+
       <View style={styles.enemyContainer}>
         <Text style={styles.enemyTitle}>{enemyName}</Text>
         <Animatable.Image 
