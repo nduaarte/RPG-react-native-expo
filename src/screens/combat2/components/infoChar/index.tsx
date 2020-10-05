@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Image, Text, InteractionManager } from 'react-native';
+import { View, Image, Text, InteractionManager, Vibration } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
 
@@ -28,6 +28,7 @@ export default function InfoChar() {
   useEffect(() => {
     InteractionManager.runAfterInteractions(() => {
       if(enemyAttackCheck) {
+        Vibration.vibrate(1000);
         animatableRefAvatar.current.swing();
         dispatch({ type: 'UPDATE_CURRENTHEALTH', value: currentHealth - enemyDamage });
         dispatch({ type: 'UPDATE_ENEMY_ATTACK_CHECK', value: false });
