@@ -25,7 +25,7 @@ export function actionUpdateImageEnemy(value: number) {
 const INITIAL_STATE = {
   name: '',
   maxLife: 0,
-  currentLife: 0,
+  currentLife: 1,
   damage: 0,
   armor: 0,
   image: ''

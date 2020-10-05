@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Modal } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler'
 import * as Progress from 'react-native-progress';
 import * as Animatable from 'react-native-animatable';
 import { useSelector } from 'react-redux';
@@ -23,6 +24,7 @@ export default function InfoEnemy() {
   const enemyMaxLife = useSelector(state => state.currentEnemyInfoReducer.maxLife);
   const enemyCurrentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
 
+  const [showModal, setShowModal] = useState(false);
   let barValue = 1 //((enemyCurrentLife * 100) / enemyMaxLife) / 100;
 
   const [image, setImage] = useState(forest);
@@ -52,16 +54,37 @@ export default function InfoEnemy() {
   const animatableRefView = useRef<Animatable.View & View>(null);    // 
   const animatableRefImage = useRef<Animatable.Image & Image>(null); // Code tirado do github.
   useEffect(() => {
+    if(enemyCurrentLife <= 0)
+      setShowModal(true);
+
     if(enemyAttackCheck) {
       animatableRefView.current.fadeOutUp();
       animatableRefImage.current.swing();
     }
   }, [enemyAttackCheck]);
 
+  const enemyDeathModal = (
+    <Modal 
+      animationType='fade' 
+      transparent={true}
+      visible={showModal}
+      presentationStyle='overFullScreen'>
+      <View style={styles.modalContainer}>
+        <View style={styles.modalSquare}>
+          <Text style={styles.modalTitle}>Inimigo morto</Text>
+
+          <Text style={styles.modalText}>{enemyName} deixou cair 10 ouros.</Text>
+          <RectButton style={styles.modalButton} onPress={() => setShowModal(false)}>
+            <Text style={styles.modalButtonText}>Me dê isso!</Text>
+          </RectButton>
+        </View>
+      </View>
+    </Modal>
+  );
+
   return(
     <View style={styles.container}>
       <Image style={styles.imageBG} source={image} />
-      
       <View style={styles.lifeContainer}>
         <View style={styles.row}>
           <Text style={styles.text}>Vida:</Text>
@@ -77,6 +100,8 @@ export default function InfoEnemy() {
           height={20}
         />
       </View>
+
+      {enemyDeathModal}
 
       <View style={styles.enemyContainer}>
         <Text style={styles.enemyTitle}>{enemyName}</Text>
