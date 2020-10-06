@@ -4,7 +4,9 @@ import { RectButton } from 'react-native-gesture-handler'
 import * as Progress from 'react-native-progress';
 import * as Animatable from 'react-native-animatable';
 import { useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 
+import imageDeath from '../../../../assets/icons/death.png'
 import desert from '../../../../assets/images/biomesImages/desertBG.jpg';
 import snow from '../../../../assets/images/biomesImages/snowBG.jpg';
 import aquatic from '../../../../assets/images/biomesImages/aquaticBG.jpg';
@@ -15,6 +17,7 @@ import jungle from '../../../../assets/images/biomesImages/jungleBG.jpg';
 import styles from './styles';
 
 export default function InfoEnemy() {
+  const navigation = useNavigation();
   const biome = useSelector(state => state.combatReducer.biomeImageName);
   const afterAttack = useSelector(state => state.combatReducer.afterAttack);
   const enemyAttackCheck = useSelector(state => state.combatReducer.enemyAttackCheck);
@@ -27,26 +30,30 @@ export default function InfoEnemy() {
   const [showModal, setShowModal] = useState(false);
   let barValue = 1 //((enemyCurrentLife * 100) / enemyMaxLife) / 100;
 
-  const [image, setImage] = useState(forest);
+  function navigateGoBack() {
+    navigation.navigate('EquipCharTab');
+  }
+
+  const [imageBG, setImageBG] = useState(forest);
   useEffect(() => {
     switch(biome) {
       case 'Deserto':
-        setImage(desert);
+        setImageBG(desert);
         break;
       case 'Nevado':
-        setImage(snow);
+        setImageBG(snow);
         break;
       case 'Aquático':
-        setImage(aquatic);
+        setImageBG(aquatic);
         break;
       case 'Floresta':
-        setImage(forest);
+        setImageBG(forest);
         break;
       case 'Rochoso':
-        setImage(rock);
+        setImageBG(rock);
         break;
       case 'Selva':
-        setImage(jungle);
+        setImageBG(jungle);
         break;
     }
   }, []);
@@ -56,7 +63,7 @@ export default function InfoEnemy() {
   useEffect(() => {
     if(enemyCurrentLife <= 0)
       setShowModal(true);
-
+      
     if(enemyAttackCheck) {
       animatableRefView.current.fadeOutUp();
       animatableRefImage.current.swing();
@@ -72,9 +79,14 @@ export default function InfoEnemy() {
       <View style={styles.modalContainer}>
         <View style={styles.modalSquare}>
           <Text style={styles.modalTitle}>Inimigo morto</Text>
-
           <Text style={styles.modalText}>{enemyName} deixou cair 10 ouros.</Text>
-          <RectButton style={styles.modalButton} onPress={() => setShowModal(false)}>
+
+          <RectButton 
+            style={styles.modalButton} 
+            onPress={() => {
+              setShowModal(false);
+              navigation.navigate('EquipCharTab');
+            }}>
             <Text style={styles.modalButtonText}>Me dê isso!</Text>
           </RectButton>
         </View>
@@ -84,7 +96,7 @@ export default function InfoEnemy() {
 
   return(
     <View style={styles.container}>
-      <Image style={styles.imageBG} source={image} />
+      <Image style={styles.imageBG} source={imageBG} />
       <View style={styles.lifeContainer}>
         <View style={styles.row}>
           <Text style={styles.text}>Vida:</Text>
@@ -107,16 +119,15 @@ export default function InfoEnemy() {
         <Text style={styles.enemyTitle}>{enemyName}</Text>
         <Animatable.Image 
           style={styles.enemyImage} 
-          source={enemyImage}
+          source={ showModal ? imageDeath : enemyImage }
           duration={750} 
           ref={animatableRefImage} 
         />
 
         <Animatable.View
-          animation='fadeOutUp'
           duration={1750}
           ref={animatableRefView}>
-          <Text style={styles.textBloodEnemy}>{afterAttack}</Text>   
+          <Text style={styles.textBloodEnemy}>{ enemyAttackCheck ? afterAttack : null }</Text>   
         </Animatable.View>
       </View>
     </View>
