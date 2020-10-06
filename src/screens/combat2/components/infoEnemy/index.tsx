@@ -28,11 +28,7 @@ export default function InfoEnemy() {
   const enemyCurrentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
 
   const [showModal, setShowModal] = useState(false);
-  let barValue = 1 //((enemyCurrentLife * 100) / enemyMaxLife) / 100;
-
-  function navigateGoBack() {
-    navigation.navigate('EquipCharTab');
-  }
+  let barValue = ((enemyCurrentLife * 100) / enemyMaxLife) / 100;
 
   const [imageBG, setImageBG] = useState(forest);
   useEffect(() => {
@@ -106,7 +102,7 @@ export default function InfoEnemy() {
           progress={barValue}
           color='#CC1F1F'
           borderColor='#1E1E1E'
-          borderWidth={3}
+          borderWidth={2}
           borderRadius={5}
           width={250}
           height={20}

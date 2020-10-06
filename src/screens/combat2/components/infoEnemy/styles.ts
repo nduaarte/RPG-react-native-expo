@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   enemyTitle: {
     fontFamily: 'Graduate_400Regular',
     color: '#fff',
-    fontSize: 22
+    fontSize: 23
   },
 
   textBloodEnemy: {
