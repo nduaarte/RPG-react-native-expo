@@ -21,13 +21,14 @@ export default function InfoChar() {
   const maxStamina = useSelector(state => state.infoBarsReducer.maxStamina);
   const currentStamina = useSelector(state => state.infoBarsReducer.currentStamina);
 
+  const enemyCurrentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
   const enemyAttackCheck = useSelector(state => state.combatReducer.enemyAttackCheck);
   const enemyDamage = useSelector(state => state.currentEnemyInfoReducer.damage);
 
   const animatableRefAvatar = useRef<Animatable.Image & Image>(null); // Code tirado do github.
   useEffect(() => {
     InteractionManager.runAfterInteractions(() => {
-      if(enemyAttackCheck) {
+      if(enemyAttackCheck && enemyCurrentLife >= 0) { // parei aqui, funcionou em termos > && enemyCurrentLife >= 0
         Vibration.vibrate(1000);
         animatableRefAvatar.current.swing();
         dispatch({ type: 'UPDATE_CURRENTHEALTH', value: (currentHealth + 5) - enemyDamage });
