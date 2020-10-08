@@ -54,8 +54,8 @@ export default function InfoEnemy() {
     }
   }, []);
 
-  const animatableRefView = useRef<Animatable.View & View>(null);    // 
-  const animatableRefImage = useRef<Animatable.Image & Image>(null); // Code tirado do github.
+  const animatableRefView = useRef<Animatable.View & View>(null);    
+  const animatableRefImage = useRef<Animatable.Image & Image>(null); 
   useEffect(() => {
     if(enemyCurrentLife <= 0)
       setShowModal(true);

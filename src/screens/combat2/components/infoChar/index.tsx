@@ -7,7 +7,6 @@ import avatar from '../../../../assets/images/breeds/elf.png';
 import gold from '../../../../assets/images/gold.png';
 
 import AttributesChar from '../../../../components/attributesCharBars';
-
 import styles from './styles';
 
 export default function InfoChar() {
@@ -25,14 +24,14 @@ export default function InfoChar() {
   const enemyAttackCheck = useSelector(state => state.combatReducer.enemyAttackCheck);
   const enemyDamage = useSelector(state => state.currentEnemyInfoReducer.damage);
 
-  const animatableRefAvatar = useRef<Animatable.Image & Image>(null); // Code tirado do github.
+  const animatableRefAvatar = useRef<Animatable.Image & Image>(null);
   useEffect(() => {
     InteractionManager.runAfterInteractions(() => {
-      if(enemyAttackCheck && enemyCurrentLife >= 0) { // parei aqui, funcionou em termos > && enemyCurrentLife >= 0
+      dispatch({ type: 'UPDATE_ENEMY_ATTACK_CHECK', value: false });
+      if(enemyAttackCheck && enemyCurrentLife >= 0) {
         Vibration.vibrate(1000);
         animatableRefAvatar.current.swing();
         dispatch({ type: 'UPDATE_CURRENTHEALTH', value: (currentHealth + 5) - enemyDamage });
-        dispatch({ type: 'UPDATE_ENEMY_ATTACK_CHECK', value: false });
       }
     });
   }, [enemyAttackCheck]);
