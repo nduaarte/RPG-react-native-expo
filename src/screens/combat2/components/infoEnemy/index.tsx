@@ -59,7 +59,6 @@ export default function InfoEnemy() {
   useEffect(() => {
     if(enemyAttackCheck && enemyCurrentLife <= 0) {
       setShowModal(true);
-      console.log(enemyCurrentLife);
     }
 
     if(enemyAttackCheck) {
@@ -70,7 +69,7 @@ export default function InfoEnemy() {
 
   const enemyDeathModal = (
     <Modal 
-      animationType='slide' 
+      animationType='fade' 
       transparent={true}
       visible={showModal}
       presentationStyle='overFullScreen'>
