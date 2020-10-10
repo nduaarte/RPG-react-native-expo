@@ -28,10 +28,11 @@ export default function InfoChar() {
   useEffect(() => {
     InteractionManager.runAfterInteractions(() => {
       dispatch({ type: 'UPDATE_ENEMY_ATTACK_CHECK', value: false });
+
       if(enemyAttackCheck && enemyCurrentLife >= 0) {
         Vibration.vibrate(1000);
-        animatableRefAvatar.current.swing();
-        dispatch({ type: 'UPDATE_CURRENTHEALTH', value: (currentHealth + 5) - enemyDamage });
+        animatableRefAvatar.current.swing();            // 5 é o valor da armadura como base de testes.
+        dispatch({ type: 'UPDATE_CURRENTHEALTH', value: (currentHealth + 5) - enemyDamage }); 
       }
     });
   }, [enemyAttackCheck]);

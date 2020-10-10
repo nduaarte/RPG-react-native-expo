@@ -57,9 +57,11 @@ export default function InfoEnemy() {
   const animatableRefView = useRef<Animatable.View & View>(null);    
   const animatableRefImage = useRef<Animatable.Image & Image>(null); 
   useEffect(() => {
-    if(enemyCurrentLife <= 0)
+    if(enemyAttackCheck && enemyCurrentLife <= 0) {
       setShowModal(true);
-      
+      console.log(enemyCurrentLife);
+    }
+
     if(enemyAttackCheck) {
       animatableRefView.current.fadeOutUp();
       animatableRefImage.current.swing();
@@ -68,7 +70,7 @@ export default function InfoEnemy() {
 
   const enemyDeathModal = (
     <Modal 
-      animationType='fade' 
+      animationType='slide' 
       transparent={true}
       visible={showModal}
       presentationStyle='overFullScreen'>
@@ -123,7 +125,9 @@ export default function InfoEnemy() {
         <Animatable.View
           duration={1750}
           ref={animatableRefView}>
-          <Text style={styles.textBloodEnemy}>{ enemyAttackCheck ? afterAttack : null }</Text>   
+          <Text style={styles.textBloodEnemy}>
+            { enemyAttackCheck ? afterAttack : null }
+          </Text>   
         </Animatable.View>
       </View>
     </View>

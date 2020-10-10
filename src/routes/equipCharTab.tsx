@@ -32,7 +32,7 @@ export default function EquipCharTab() {
       }} />
 
       
-      <Screen name='Combat' component={Combat} options={{
+      <Screen name='Combate' component={Combat} options={{
         tabBarIcon: () => {
           return(
             <Image source={combatIcon} style={{width: 30, height: 30}} />
