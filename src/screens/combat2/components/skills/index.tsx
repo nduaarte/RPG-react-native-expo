@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { View, Image } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
 
 import habilityImg from '../../../../assets/images/skills/summon.png';
 import defaultAttackImg from '../../../../assets/images/skills/default-attack.png';
 
+import TestSkill from '../../../../components/skillsClasses/mageSkills';
 import styles from './styles';
 
 export default function Skills() {
@@ -46,9 +46,7 @@ export default function Skills() {
 
   return(
     <View style={styles.container}>
-      <RectButton style={styles.buttonHability}>
-        <Image style={styles.image} source={habilityImg} />
-      </RectButton>
+      <TestSkill />
 
       <RectButton style={styles.buttonDefaultAttack} onPress={() => attack()}>
         <Image style={styles.image} source={defaultAttackImg} />
