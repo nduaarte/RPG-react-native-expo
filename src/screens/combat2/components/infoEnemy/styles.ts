@@ -110,6 +110,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#ededed',
     fontWeight: 'bold'
+  },
+
+  modalTextXp: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#5aace0'
   }
 });
 

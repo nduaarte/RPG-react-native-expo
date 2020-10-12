@@ -21,6 +21,9 @@ export default function Combat2() {
     dispatch({ type: 'UPDATE_DAMAGE_ENEMY', value: currentBiome[chosenEnemy].damage });
     dispatch({ type: 'UPDATE_ARMOR_ENEMY', value: currentBiome[chosenEnemy].armor });
     dispatch({ type: 'UPDATE_IMAGE_ENEMY', value: currentBiome[chosenEnemy].image });
+    dispatch({ type: 'UPDATE_ITEM_ENEMY', value: currentBiome[chosenEnemy].loot.item });
+    dispatch({ type: 'UPDATE_GOLD_ENEMY', value: currentBiome[chosenEnemy].loot.gold });
+    dispatch({ type: 'UPDATE_XP_ENEMY', value: currentBiome[chosenEnemy].loot.xp });
   }, []);
 
   return(

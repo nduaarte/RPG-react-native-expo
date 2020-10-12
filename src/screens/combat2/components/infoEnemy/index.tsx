@@ -20,12 +20,15 @@ export default function InfoEnemy() {
   const navigation = useNavigation();
   const biome = useSelector(state => state.combatReducer.biomeImageName);
   const afterAttack = useSelector(state => state.combatReducer.afterAttack);
-  const enemyAttackCheck = useSelector(state => state.combatReducer.enemyAttackCheck);
 
+  const enemyAttackCheck = useSelector(state => state.combatReducer.enemyAttackCheck);
   const enemyImage = useSelector(state => state.currentEnemyInfoReducer.image);
   const enemyName = useSelector(state => state.currentEnemyInfoReducer.name);
   const enemyMaxLife = useSelector(state => state.currentEnemyInfoReducer.maxLife);
   const enemyCurrentLife = useSelector(state => state.currentEnemyInfoReducer.currentLife);
+  const itemLoot = useSelector(state => state.currentEnemyInfoReducer.item);
+  const goldLoot = useSelector(state => state.currentEnemyInfoReducer.gold);
+  const xpLoot = useSelector(state => state.currentEnemyInfoReducer.xp);
 
   const [showModal, setShowModal] = useState(false);
   let barValue = ((enemyCurrentLife * 100) / enemyMaxLife) / 100;
@@ -76,7 +79,8 @@ export default function InfoEnemy() {
       <View style={styles.modalContainer}>
         <View style={styles.modalSquare}>
           <Text style={styles.modalTitle}>Inimigo morto</Text>
-          <Text style={styles.modalText}>{enemyName} deixou cair 10 ouros.</Text>
+          <Text style={styles.modalText}>{enemyName} deixou cair um {itemLoot} e {goldLoot} moedas de ouro.</Text>
+          <Text style={styles.modalTextXp}>+{xpLoot} Exp</Text>
 
           <RectButton 
             style={styles.modalButton} 
