@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
   icon: {
     width: 40,
     height: 40
+  },
+
+  missText: {
+    fontFamily: 'Graduate_400Regular',
+    fontSize: 20,
+    position: 'absolute'
   }
 });
 

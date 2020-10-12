@@ -6,7 +6,7 @@ const forest = [
     damage: 5,
     armor: 2,
     loot: {
-      item: 'carne crua',
+      item: 'Carne Crua',
       gold: 5,
       xp: 14
     }
@@ -42,7 +42,7 @@ const forest = [
     damage: 9,
     armor: 7,
     loot: {
-      item: 'presas',
+      item: 'Presas',
       gold: 6,
       xp: 7
     }
@@ -54,7 +54,7 @@ const forest = [
     damage: 8,
     armor: 6,
     loot: {
-      item: 'couro',
+      item: 'Couro',
       gold: 9,
       xp: 7
     }
@@ -66,7 +66,7 @@ const forest = [
     damage: 7,
     armor: 7,
     loot: {
-      item: 'corda',
+      item: 'Corda',
       gold: 6,
       xp: 7
     }
@@ -78,7 +78,7 @@ const forest = [
     damage: 7,
     armor: 7,
     loot: {
-      item: 'corda',
+      item: 'Corda',
       gold: 6,
       xp: 8
     }

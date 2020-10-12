@@ -79,7 +79,7 @@ export default function InfoEnemy() {
       <View style={styles.modalContainer}>
         <View style={styles.modalSquare}>
           <Text style={styles.modalTitle}>Inimigo morto</Text>
-          <Text style={styles.modalText}>{enemyName} deixou cair um {itemLoot} e {goldLoot} moedas de ouro.</Text>
+          <Text style={styles.modalText}>{enemyName} deixou cair {itemLoot} e {goldLoot} Moedas de Ouro.</Text>
           <Text style={styles.modalTextXp}>+{xpLoot} Exp</Text>
 
           <RectButton 
