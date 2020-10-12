@@ -9,14 +9,23 @@ import styles from './styles';
 
 export default function MageSkills() {
   const dispatch = useDispatch()
-  const maxLifeChar = useSelector(state => state.infoBarsReducer.maxLife);
-  const currentLifeChar = useSelector(state => state.infoBarsReducer.currentLifeChar);
-  const healPercetage = 30;
+  const maxHealth = useSelector(state => state.infoBarsReducer.maxHealth);
+  const currentHealth = useSelector(state => state.infoBarsReducer.currentHealth);
+  const currentMana = useSelector(state => state.infoBarsReducer.currentMana);
+  const healPercetage = 30; // Valor usado como porcentagem (exemplo: 30%).
+  const manaCost = 5;
 
   function calculateHealing() {
-    const healValue = (maxLifeChar * healPercetage) / 100;
-    healValue.toFixed(1);
-    dispatch({ type: 'UPDATE_CURRENTHEALTH', value: currentLifeChar + healValue });
+    if(currentMana > manaCost) {
+      const healValue = (maxHealth * healPercetage) / 100; 
+
+      if(currentHealth + healValue <= maxHealth) {
+        dispatch({ type: 'UPDATE_CURRENTHEALTH', value: currentHealth + healValue });
+      } else {
+        dispatch({ type: 'UPDATE_CURRENTHEALTH', value: maxHealth });
+      }
+      dispatch({ type: 'UPDATE_CURRENTMANA', value: currentMana - manaCost });
+    }
   }
 
   return(
