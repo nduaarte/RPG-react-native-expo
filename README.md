@@ -5,7 +5,7 @@
   dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
 </p>
 
-![wrench](assets/wrench.png?raw=true)
+![wrench](assets/wrench.png)
 ### Em desenvolvimento... 
 
 ### Features
