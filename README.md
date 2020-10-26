@@ -1,11 +1,10 @@
-# STAFFS AND AXES
+<h1 align="center">STAFFS AND AXES</h1>
 
 <p align="center">
   Um jogo de tabuleiro no estilo de RPG. Suas principais características são o uso de
   dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
 </p>
 
-<img src="./assets/wrench.jpg" alt="drawing" width="80" height="80" />
 ### Em desenvolvimento... 
 
 ### Features
