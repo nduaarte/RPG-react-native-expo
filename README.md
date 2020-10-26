@@ -5,7 +5,7 @@
   dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
 </p>
 
-### Em desenvolvimento... #-#
+### Em desenvolvimento... 
 
 ### Features
 
@@ -17,3 +17,9 @@
 - [ ] Habilidades das Classes
 - [ ] Passivas das Classes
 
+### Tecnologias usadas no desenvolvimento:
+
+[Expo](https://expo.io/);
+[React Native](https://reactnative.dev/);
+[Type Script](https://www.typescriptlang.org/);
+[Redux](https://redux.js.org/);
