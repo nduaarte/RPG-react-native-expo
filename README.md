@@ -1,11 +1,21 @@
-# RPG-react-native-expo
+# STAFFS AND AXES
 
-### Escolhe da Classes e Raças.
+## Descrição do Projeto
 
-### Distribuição de pontos de atributos.
+<p align="center">
+  Um jogo de tabuleiro no estilo de RPG. Suas principais características são o uso de
+  dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
+</p>
 
-### Batalha contra inimigos.
+### Em desenvolvimento... #-#
 
-### Tabuleiro exclusivo.
+### Features
 
-### Classe com mecânica exclusiva.
+- [x] Todas as interfaces do usuário
+- [x] Criação do Personagem
+- [x] Sistema de PvE
+- [ ] Sistema de PvP
+- [ ] Mecânica do Inventário
+- [ ] Habilidades das Classes
+- [ ] Passivas das Classes
+
