@@ -17,9 +17,9 @@
 - [ ] Habilidades das Classes
 - [ ] Passivas das Classes
 
-### Tecnologias usadas no desenvolvimento:
+### Tecnologias usadas:
 
-[Expo](https://expo.io/);
-[React Native](https://reactnative.dev/);
-[Type Script](https://www.typescriptlang.org/);
-[Redux](https://redux.js.org/);
+- [Expo](https://expo.io/);
+- [React Native](https://reactnative.dev/);
+- [Type Script](https://www.typescriptlang.org/);
+- [Redux](https://redux.js.org/);
