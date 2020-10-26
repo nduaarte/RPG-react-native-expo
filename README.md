@@ -5,7 +5,7 @@
   dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
 </p>
 
-![wrench](https://github.com/[username]/[reponame]/blob/[branch]/[assets]/wrench.png)
+![wrench](https://github.com/[redspaace]/[RPG-react-native-expo]/blob/[branch]/[assets]/wrench.png)
 ### Em desenvolvimento... 
 
 ### Features
