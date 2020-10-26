@@ -5,7 +5,7 @@
   dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
 </p>
 
-<img src="./assets/drawing.jpg" alt="drawing" width="80" height="80" />
+<img src="./assets/wrench.jpg" alt="drawing" width="80" height="80" />
 ### Em desenvolvimento... 
 
 ### Features
