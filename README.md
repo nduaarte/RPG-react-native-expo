@@ -1,7 +1,5 @@
 # STAFFS AND AXES
 
-## Descrição do Projeto
-
 <p align="center">
   Um jogo de tabuleiro no estilo de RPG. Suas principais características são o uso de
   dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
