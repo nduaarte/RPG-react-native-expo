@@ -5,8 +5,7 @@
   dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
 </p>
 
-<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
+![wrench](https://github.com/[username]/[reponame]/blob/[branch]/[assets]/wrench.png)
 ### Em desenvolvimento... 
 
 ### Features
@@ -21,7 +20,7 @@
 
 ### Tecnologias usadas:
 
-- [Expo](https://expo.io/);
-- [React Native](https://reactnative.dev/);
-- [Type Script](https://www.typescriptlang.org/);
-- [Redux](https://redux.js.org/);
+- [Expo](https://expo.io/)
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Redux](https://redux.js.org/)
