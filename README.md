@@ -5,7 +5,7 @@
   dados e uma interface exclusiva para cada jogador usando seu próprio dispositivo móvel.
 </p>
 
-### Em desenvolvimento... 
+## Descontinuado.
 
 ### Features
 
